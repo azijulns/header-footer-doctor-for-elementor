@@ -2,11 +2,11 @@
 /**
  * Plugin bootstrap: environment checks, i18n and module wiring.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  */
 
-namespace HFDoctor;
+namespace HFFlow;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * requirement is missing the plugin stays inert and shows an admin notice
  * instead of fataling.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  * @api
  */
@@ -100,16 +100,16 @@ final class Plugin {
 			return;
 		}
 
-		require_once HFDOCTOR_DIR . 'includes/class-templates.php';
-		require_once HFDOCTOR_DIR . 'includes/class-mobile-menu.php';
-		require_once HFDOCTOR_DIR . 'includes/class-hello-elementor.php';
-		require_once HFDOCTOR_DIR . 'widgets/class-widgets-manager.php';
+		require_once HFFLOW_DIR . 'includes/class-templates.php';
+		require_once HFFLOW_DIR . 'includes/class-mobile-menu.php';
+		require_once HFFLOW_DIR . 'includes/class-hello-elementor.php';
+		require_once HFFLOW_DIR . 'widgets/class-widgets-manager.php';
 
 		$this->templates = new Templates();
 
 		new Mobile_Menu();
 		new Hello_Elementor( $this->templates );
-		new \HFDoctor\Widgets\Widgets_Manager();
+		new \HFFlow\Widgets\Widgets_Manager();
 	}
 
 	/**
@@ -140,11 +140,11 @@ final class Plugin {
 	 * @api
 	 */
 	public static function asset_version( string $relative_path ): string {
-		$file = HFDOCTOR_DIR . ltrim( $relative_path, '/\\' );
+		$file = HFFLOW_DIR . ltrim( $relative_path, '/\\' );
 
 		$mtime = is_readable( $file ) ? filemtime( $file ) : false;
 
-		return $mtime ? HFDOCTOR_VERSION . '.' . $mtime : HFDOCTOR_VERSION;
+		return $mtime ? HFFLOW_VERSION . '.' . $mtime : HFFLOW_VERSION;
 	}
 
 	/**
@@ -162,33 +162,33 @@ final class Plugin {
 			$this->notice(
 				sprintf(
 					/* translators: %s: Elementor plugin name, wrapped in <strong>. */
-					esc_html__( 'Header Footer Doctor requires %s to be installed and activated.', 'header-footer-doctor-for-elementor' ),
-					'<strong>' . esc_html__( 'Elementor', 'header-footer-doctor-for-elementor' ) . '</strong>'
+					esc_html__( 'HeaderFooterFlow requires %s to be installed and activated.', 'headerfooterflow-for-elementor' ),
+					'<strong>' . esc_html__( 'Elementor', 'headerfooterflow-for-elementor' ) . '</strong>'
 				)
 			);
 
 			return false;
 		}
 
-		if ( ! version_compare( ELEMENTOR_VERSION, HFDOCTOR_MIN_ELEMENTOR_VERSION, '>=' ) ) {
+		if ( ! version_compare( ELEMENTOR_VERSION, HFFLOW_MIN_ELEMENTOR_VERSION, '>=' ) ) {
 			$this->notice(
 				sprintf(
 					/* translators: 1: Elementor plugin name, 2: minimum required Elementor version. */
-					esc_html__( 'Header Footer Doctor requires %1$s version %2$s or greater.', 'header-footer-doctor-for-elementor' ),
-					'<strong>' . esc_html__( 'Elementor', 'header-footer-doctor-for-elementor' ) . '</strong>',
-					'<strong>' . esc_html( HFDOCTOR_MIN_ELEMENTOR_VERSION ) . '</strong>'
+					esc_html__( 'HeaderFooterFlow requires %1$s version %2$s or greater.', 'headerfooterflow-for-elementor' ),
+					'<strong>' . esc_html__( 'Elementor', 'headerfooterflow-for-elementor' ) . '</strong>',
+					'<strong>' . esc_html( HFFLOW_MIN_ELEMENTOR_VERSION ) . '</strong>'
 				)
 			);
 
 			return false;
 		}
 
-		if ( HFDOCTOR_SUPPORTED_THEME !== get_template() ) {
+		if ( HFFLOW_SUPPORTED_THEME !== get_template() ) {
 			$this->notice(
 				sprintf(
 					/* translators: %s: Hello Elementor theme name, wrapped in <strong>. */
-					esc_html__( 'Header Footer Doctor is built for the %s theme. Activate that theme (or a child theme of it) to use the header and footer builder.', 'header-footer-doctor-for-elementor' ),
-					'<strong>' . esc_html__( 'Hello Elementor', 'header-footer-doctor-for-elementor' ) . '</strong>'
+					esc_html__( 'HeaderFooterFlow is built for the %s theme. Activate that theme (or a child theme of it) to use the header and footer builder.', 'headerfooterflow-for-elementor' ),
+					'<strong>' . esc_html__( 'Hello Elementor', 'headerfooterflow-for-elementor' ) . '</strong>'
 				)
 			);
 

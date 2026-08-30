@@ -1,11 +1,11 @@
 /**
- * Header Footer Doctor for Elementor — hamburger toggle widget.
+ * HeaderFooterFlow for Elementor — hamburger toggle widget.
  *
  * Sizing is driven by custom properties so the Elementor style controls only
  * ever have to set a variable, never fight a selector.
  */
 
-.hfdoctor-hamburger-wrap {
+.hfflow-hamburger-wrap {
 	display: flex;
 	align-items: center;
 }
@@ -15,17 +15,17 @@
  * `.elementor-kit-{id} button { ... }` at specificity (0,1,1), which would
  * otherwise paint this button with the site's global button colours.
  */
-.hfdoctor-hamburger.hfdoctor-hamburger {
-	--hfdoctor-hamburger-size: 30px;
-	--hfdoctor-hamburger-bar: 2px;
-	--hfdoctor-hamburger-gap: 7px;
-	--hfdoctor-hamburger-bar-radius: 2px;
-	--hfdoctor-hamburger-text-gap: 10px;
+.hfflow-hamburger.hfflow-hamburger {
+	--hfflow-hamburger-size: 30px;
+	--hfflow-hamburger-bar: 2px;
+	--hfflow-hamburger-gap: 7px;
+	--hfflow-hamburger-bar-radius: 2px;
+	--hfflow-hamburger-text-gap: 10px;
 
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: var( --hfdoctor-hamburger-text-gap );
+	gap: var( --hfflow-hamburger-text-gap );
 	width: auto;
 	min-width: 0;
 	height: auto;
@@ -44,80 +44,80 @@
 	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.hfdoctor-hamburger:focus-visible {
+.hfflow-hamburger:focus-visible {
 	outline: 2px solid currentColor;
 	outline-offset: 3px;
 }
 
 /* Text before the icon. */
-.hfdoctor-hamburger--text-before {
+.hfflow-hamburger--text-before {
 	flex-direction: row-reverse;
 }
 
-.hfdoctor-hamburger__text {
+.hfflow-hamburger__text {
 	display: inline-block;
 }
 
 /* Animated lines. */
-.hfdoctor-hamburger__box {
+.hfflow-hamburger__box {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	gap: var( --hfdoctor-hamburger-gap );
-	width: var( --hfdoctor-hamburger-size );
+	gap: var( --hfflow-hamburger-gap );
+	width: var( --hfflow-hamburger-size );
 	flex: none;
 }
 
-.hfdoctor-hamburger__line {
+.hfflow-hamburger__line {
 	display: block;
 	width: 100%;
-	height: var( --hfdoctor-hamburger-bar );
+	height: var( --hfflow-hamburger-bar );
 	background-color: currentColor;
-	border-radius: var( --hfdoctor-hamburger-bar-radius );
+	border-radius: var( --hfflow-hamburger-bar-radius );
 	transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.hfdoctor-hamburger--cross[aria-expanded="true"] .hfdoctor-hamburger__line:nth-child( 1 ) {
-	transform: translateY( calc( var( --hfdoctor-hamburger-bar ) + var( --hfdoctor-hamburger-gap ) ) ) rotate( 45deg );
+.hfflow-hamburger--cross[aria-expanded="true"] .hfflow-hamburger__line:nth-child( 1 ) {
+	transform: translateY( calc( var( --hfflow-hamburger-bar ) + var( --hfflow-hamburger-gap ) ) ) rotate( 45deg );
 }
 
-.hfdoctor-hamburger--cross[aria-expanded="true"] .hfdoctor-hamburger__line:nth-child( 2 ) {
+.hfflow-hamburger--cross[aria-expanded="true"] .hfflow-hamburger__line:nth-child( 2 ) {
 	opacity: 0;
 }
 
-.hfdoctor-hamburger--cross[aria-expanded="true"] .hfdoctor-hamburger__line:nth-child( 3 ) {
-	transform: translateY( calc( -1 * ( var( --hfdoctor-hamburger-bar ) + var( --hfdoctor-hamburger-gap ) ) ) ) rotate( -45deg );
+.hfflow-hamburger--cross[aria-expanded="true"] .hfflow-hamburger__line:nth-child( 3 ) {
+	transform: translateY( calc( -1 * ( var( --hfflow-hamburger-bar ) + var( --hfflow-hamburger-gap ) ) ) ) rotate( -45deg );
 }
 
 /* Custom icon. */
-.hfdoctor-hamburger__icon {
+.hfflow-hamburger__icon {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	flex: none;
 }
 
-.hfdoctor-hamburger__icon i {
-	font-size: var( --hfdoctor-hamburger-size );
+.hfflow-hamburger__icon i {
+	font-size: var( --hfflow-hamburger-size );
 	line-height: 1;
 }
 
-.hfdoctor-hamburger__icon svg {
-	width: var( --hfdoctor-hamburger-size );
+.hfflow-hamburger__icon svg {
+	width: var( --hfflow-hamburger-size );
 	height: auto;
 	fill: currentColor;
 }
 
 @media ( prefers-reduced-motion: reduce ) {
 
-	.hfdoctor-hamburger,
-	.hfdoctor-hamburger__line {
+	.hfflow-hamburger,
+	.hfflow-hamburger__line {
 		transition: none;
 	}
 }
 
 /* Editor-only hint shown when no off-canvas menu is assigned yet. */
-.hfdoctor-hamburger-notice {
+.hfflow-hamburger-notice {
 	margin: 10px 0 0;
 	padding: 10px 12px;
 	color: #4b3200;

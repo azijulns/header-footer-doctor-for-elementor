@@ -1,42 +1,42 @@
 /**
- * Header Footer Doctor for Elementor — Nav Menu widget.
+ * HeaderFooterFlow for Elementor — Nav Menu widget.
  *
  * Layout only. Every colour, size and spacing value is left to the widget's
  * Style tab so nothing here has to be overridden.
  */
 
-.hfdoctor-nav .hfdoctor-menu,
-.hfdoctor-nav .hfdoctor-menu ul {
+.hfflow-nav .hfflow-menu,
+.hfflow-nav .hfflow-menu ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-.hfdoctor-nav .hfdoctor-menu {
+.hfflow-nav .hfflow-menu {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 }
 
-.hfdoctor-nav .hfdoctor-menu li {
+.hfflow-nav .hfflow-menu li {
 	position: relative;
 }
 
-.hfdoctor-nav .hfdoctor-menu a {
+.hfflow-nav .hfflow-menu a {
 	display: block;
 	text-decoration: none;
 	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Vertical layout. */
-.hfdoctor-menu-layout-vertical .hfdoctor-menu {
+.hfflow-menu-layout-vertical .hfflow-menu {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	align-items: stretch;
 }
 
 /* Sub-menus. */
-.hfdoctor-nav .hfdoctor-menu .sub-menu {
+.hfflow-nav .hfflow-menu .sub-menu {
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -47,20 +47,20 @@
 	transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-.hfdoctor-nav .hfdoctor-menu .sub-menu .sub-menu {
+.hfflow-nav .hfflow-menu .sub-menu .sub-menu {
 	top: 0;
 	left: 100%;
 }
 
-.hfdoctor-nav .hfdoctor-menu li:hover > .sub-menu,
-.hfdoctor-nav .hfdoctor-menu li:focus-within > .sub-menu {
+.hfflow-nav .hfflow-menu li:hover > .sub-menu,
+.hfflow-nav .hfflow-menu li:focus-within > .sub-menu {
 	visibility: visible;
 	opacity: 1;
 }
 
 /* In a vertical menu the sub-menu stacks underneath instead of flying out. */
-.hfdoctor-menu-layout-vertical .hfdoctor-menu .sub-menu,
-.hfdoctor-menu-layout-vertical .hfdoctor-menu .sub-menu .sub-menu {
+.hfflow-menu-layout-vertical .hfflow-menu .sub-menu,
+.hfflow-menu-layout-vertical .hfflow-menu .sub-menu .sub-menu {
 	position: static;
 	min-width: 0;
 	visibility: visible;
@@ -69,13 +69,13 @@
 }
 
 /* Menu items that open a sub-menu. */
-.hfdoctor-nav .hfdoctor-menu .menu-item-has-children > a {
+.hfflow-nav .hfflow-menu .menu-item-has-children > a {
 	display: flex;
 	align-items: center;
 	gap: 6px;
 }
 
-.hfdoctor-nav .hfdoctor-menu .menu-item-has-children > a::after {
+.hfflow-nav .hfflow-menu .menu-item-has-children > a::after {
 	content: "";
 	display: none;
 	width: 0.4em;
@@ -88,8 +88,8 @@
 
 @media ( prefers-reduced-motion: reduce ) {
 
-	.hfdoctor-nav .hfdoctor-menu a,
-	.hfdoctor-nav .hfdoctor-menu .sub-menu {
+	.hfflow-nav .hfflow-menu a,
+	.hfflow-nav .hfflow-menu .sub-menu {
 		transition: none;
 	}
 }

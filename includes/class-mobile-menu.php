@@ -2,11 +2,11 @@
 /**
  * Off-canvas mobile menu.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  */
 
-namespace HFDoctor;
+namespace HFFlow;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -14,9 +14,9 @@ defined( 'ABSPATH' ) || exit;
  * Renders an off-canvas panel that mirrors a chosen navigation menu.
  *
  * The panel is only printed when a menu is actually assigned to the
- * `hfdoctor_offcanvas` location, so the plugin adds no markup by default.
+ * `hfflow_offcanvas` location, so the plugin adds no markup by default.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  * @api
  */
@@ -27,7 +27,7 @@ class Mobile_Menu {
 	 *
 	 * @var string
 	 */
-	public const LOCATION = 'hfdoctor_offcanvas';
+	public const LOCATION = 'hfflow_offcanvas';
 
 	/**
 	 * Register the menu location and front-end hooks.
@@ -51,7 +51,7 @@ class Mobile_Menu {
 	public function register_menu_location(): void {
 		register_nav_menu(
 			self::LOCATION,
-			__( 'Header Footer Doctor — Off-canvas Menu', 'header-footer-doctor-for-elementor' )
+			__( 'HeaderFooterFlow — Off-canvas Menu', 'headerfooterflow-for-elementor' )
 		);
 	}
 
@@ -71,7 +71,7 @@ class Mobile_Menu {
 		 *
 		 * @param bool $enabled True when a menu is assigned to the plugin location.
 		 */
-		return (bool) apply_filters( 'hfdoctor_enable_offcanvas', has_nav_menu( self::LOCATION ) );
+		return (bool) apply_filters( 'hfflow_enable_offcanvas', has_nav_menu( self::LOCATION ) );
 	}
 
 	/**
@@ -88,15 +88,15 @@ class Mobile_Menu {
 		}
 
 		wp_enqueue_style(
-			'hfdoctor-offcanvas',
-			HFDOCTOR_URL . 'assets/css/offcanvas.css',
+			'hfflow-offcanvas',
+			HFFLOW_URL . 'assets/css/offcanvas.css',
 			array(),
 			Plugin::asset_version( 'assets/css/offcanvas.css' )
 		);
 
 		wp_enqueue_script(
-			'hfdoctor-offcanvas',
-			HFDOCTOR_URL . 'assets/js/offcanvas.js',
+			'hfflow-offcanvas',
+			HFFLOW_URL . 'assets/js/offcanvas.js',
 			array(),
 			Plugin::asset_version( 'assets/js/offcanvas.js' ),
 			true
@@ -113,13 +113,13 @@ class Mobile_Menu {
 		 * @param string $selector A CSS selector list.
 		 */
 		$trigger = (string) apply_filters(
-			'hfdoctor_offcanvas_trigger_selector',
-			'.hamburger .elementor-icon, .hfdoctor-offcanvas-open, [data-hfdoctor-offcanvas-open]'
+			'hfflow_offcanvas_trigger_selector',
+			'.hamburger .elementor-icon, .hfflow-offcanvas-open, [data-hfflow-offcanvas-open]'
 		);
 
 		wp_localize_script(
-			'hfdoctor-offcanvas',
-			'hfdoctorOffcanvas',
+			'hfflow-offcanvas',
+			'hfflowOffcanvas',
 			array(
 				'trigger' => $trigger,
 			)
@@ -139,21 +139,21 @@ class Mobile_Menu {
 			return;
 		}
 		?>
-		<div class="hfdoctor-offcanvas" id="hfdoctor-offcanvas" role="dialog" aria-modal="true"
-			aria-label="<?php esc_attr_e( 'Mobile menu', 'header-footer-doctor-for-elementor' ); ?>" hidden>
-			<div class="hfdoctor-offcanvas__bar">
+		<div class="hfflow-offcanvas" id="hfflow-offcanvas" role="dialog" aria-modal="true"
+			aria-label="<?php esc_attr_e( 'Mobile menu', 'headerfooterflow-for-elementor' ); ?>" hidden>
+			<div class="hfflow-offcanvas__bar">
 				<?php
 				if ( has_custom_logo() ) {
 					the_custom_logo();
 				} else {
 					printf(
-						'<span class="hfdoctor-offcanvas__title">%s</span>',
+						'<span class="hfflow-offcanvas__title">%s</span>',
 						esc_html( get_bloginfo( 'name' ) )
 					);
 				}
 				?>
-				<button type="button" class="hfdoctor-offcanvas__close"
-					aria-label="<?php esc_attr_e( 'Close menu', 'header-footer-doctor-for-elementor' ); ?>">
+				<button type="button" class="hfflow-offcanvas__close"
+					aria-label="<?php esc_attr_e( 'Close menu', 'headerfooterflow-for-elementor' ); ?>">
 					<svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false"
 						xmlns="http://www.w3.org/2000/svg">
 						<circle cx="20" cy="20" r="19.5" stroke="currentColor" />
@@ -163,14 +163,14 @@ class Mobile_Menu {
 				</button>
 			</div>
 
-			<nav class="hfdoctor-offcanvas__nav"
-				aria-label="<?php esc_attr_e( 'Mobile navigation', 'header-footer-doctor-for-elementor' ); ?>">
+			<nav class="hfflow-offcanvas__nav"
+				aria-label="<?php esc_attr_e( 'Mobile navigation', 'headerfooterflow-for-elementor' ); ?>">
 				<?php
 				wp_nav_menu(
 					array(
 						'theme_location' => self::LOCATION,
 						'container'      => false,
-						'menu_class'     => 'hfdoctor-offcanvas__menu',
+						'menu_class'     => 'hfflow-offcanvas__menu',
 						'depth'          => 3,
 						'fallback_cb'    => false,
 					)
@@ -178,7 +178,7 @@ class Mobile_Menu {
 				?>
 			</nav>
 		</div>
-		<div class="hfdoctor-offcanvas__overlay" hidden></div>
+		<div class="hfflow-offcanvas__overlay" hidden></div>
 		<?php
 	}
 }

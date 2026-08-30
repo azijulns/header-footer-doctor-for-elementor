@@ -1,5 +1,5 @@
 /**
- * Header Footer Doctor for Elementor — template edit screen behaviour.
+ * HeaderFooterFlow for Elementor — template edit screen behaviour.
  *
  * Shows the page picker only for the "Specific pages" rule and provides a
  * client-side filter over the page list. No external dependencies.
@@ -23,9 +23,9 @@
 	 * @param {HTMLElement} picker The page picker container.
 	 */
 	function filterPages( picker ) {
-		var search = picker.querySelector( '.hfdoctor-pagepicker__search' );
-		var items = picker.querySelectorAll( '.hfdoctor-pagepicker__item' );
-		var empty = picker.querySelector( '.hfdoctor-pagepicker__empty' );
+		var search = picker.querySelector( '.hfflow-pagepicker__search' );
+		var items = picker.querySelectorAll( '.hfflow-pagepicker__item' );
+		var empty = picker.querySelector( '.hfflow-pagepicker__empty' );
 		var needle = search ? search.value.trim().toLowerCase() : '';
 		var visible = 0;
 
@@ -51,7 +51,7 @@
 	 * @param {HTMLElement} picker The page picker container.
 	 */
 	function updateCount( picker ) {
-		var counter = picker.querySelector( '.hfdoctor-pagepicker__count' );
+		var counter = picker.querySelector( '.hfflow-pagepicker__count' );
 
 		if ( counter ) {
 			counter.textContent = String(
@@ -61,8 +61,8 @@
 	}
 
 	document.addEventListener( 'DOMContentLoaded', function () {
-		var select = document.querySelector( '.hfdoctor-rule-type' );
-		var picker = document.querySelector( '.hfdoctor-pagepicker' );
+		var select = document.querySelector( '.hfflow-rule-type' );
+		var picker = document.querySelector( '.hfflow-pagepicker' );
 
 		if ( ! select || ! picker ) {
 			return;
@@ -74,7 +74,7 @@
 			syncVisibility( select, picker );
 		} );
 
-		var search = picker.querySelector( '.hfdoctor-pagepicker__search' );
+		var search = picker.querySelector( '.hfflow-pagepicker__search' );
 
 		if ( search ) {
 			search.addEventListener( 'input', function () {

@@ -2,18 +2,18 @@
 /**
  * Elementor widget registration.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  */
 
-namespace HFDoctor\Widgets;
+namespace HFFlow\Widgets;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Registers this plugin's Elementor widgets and their stylesheets.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  * @internal
  */
@@ -29,8 +29,8 @@ class Widgets_Manager {
 	 * @var array<string, string> Handle => file name inside `assets/css/`.
 	 */
 	private const STYLES = array(
-		'hfdoctor-menu'      => 'menu.css',
-		'hfdoctor-hamburger' => 'hamburger.css',
+		'hfflow-menu'      => 'menu.css',
+		'hfflow-hamburger' => 'hamburger.css',
 	);
 
 	/**
@@ -53,8 +53,8 @@ class Widgets_Manager {
 	 * @internal
 	 */
 	public function register_widgets( $widgets_manager ): void {
-		require_once HFDOCTOR_DIR . 'widgets/class-menu-widget.php';
-		require_once HFDOCTOR_DIR . 'widgets/class-hamburger-widget.php';
+		require_once HFFLOW_DIR . 'widgets/class-menu-widget.php';
+		require_once HFFLOW_DIR . 'widgets/class-hamburger-widget.php';
 
 		$widgets_manager->register( new Menu_Widget() );
 		$widgets_manager->register( new Hamburger_Widget() );
@@ -72,9 +72,9 @@ class Widgets_Manager {
 		foreach ( self::STYLES as $handle => $file ) {
 			wp_register_style(
 				$handle,
-				HFDOCTOR_URL . 'assets/css/' . $file,
+				HFFLOW_URL . 'assets/css/' . $file,
 				array(),
-				\HFDoctor\Plugin::asset_version( 'assets/css/' . $file )
+				\HFFlow\Plugin::asset_version( 'assets/css/' . $file )
 			);
 		}
 	}

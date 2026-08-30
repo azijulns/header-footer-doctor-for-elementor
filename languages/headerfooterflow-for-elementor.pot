@@ -2,8 +2,8 @@
 # This file is distributed under the GPL-2.0-or-later license.
 msgid ""
 msgstr ""
-"Project-Id-Version: Header Footer Doctor for Elementor 1.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/header-footer-doctor-for-elementor\n"
+"Project-Id-Version: HeaderFooterFlow for Elementor 1.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/headerfooterflow-for-elementor\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,11 +12,11 @@ msgstr ""
 "POT-Creation-Date: 2026-01-01T00:00:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Domain: header-footer-doctor-for-elementor\n"
+"X-Domain: headerfooterflow-for-elementor\n"
 
 #. translators: %s: Elementor plugin name, wrapped in <strong>.
 #: includes/class-plugin.php
-msgid "Header Footer Doctor requires %s to be installed and activated."
+msgid "HeaderFooterFlow requires %s to be installed and activated."
 msgstr ""
 
 #: includes/class-plugin.php
@@ -25,12 +25,12 @@ msgstr ""
 
 #. translators: 1: Elementor plugin name, 2: minimum required Elementor version.
 #: includes/class-plugin.php
-msgid "Header Footer Doctor requires %1$s version %2$s or greater."
+msgid "HeaderFooterFlow requires %1$s version %2$s or greater."
 msgstr ""
 
 #. translators: %s: Hello Elementor theme name, wrapped in <strong>.
 #: includes/class-plugin.php
-msgid "Header Footer Doctor is built for the %s theme. Activate that theme (or a child theme of it) to use the header and footer builder."
+msgid "HeaderFooterFlow is built for the %s theme. Activate that theme (or a child theme of it) to use the header and footer builder."
 msgstr ""
 
 #: includes/class-plugin.php
@@ -46,7 +46,7 @@ msgid "Template"
 msgstr ""
 
 #: includes/class-templates.php
-msgid "Header Footer Doctor"
+msgid "HeaderFooterFlow"
 msgstr ""
 
 #: includes/class-templates.php
@@ -181,7 +181,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: includes/class-mobile-menu.php
-msgid "Header Footer Doctor — Off-canvas Menu"
+msgid "HeaderFooterFlow — Off-canvas Menu"
 msgstr ""
 
 #: includes/class-mobile-menu.php
@@ -201,7 +201,7 @@ msgid "Skip to content"
 msgstr ""
 
 #: widgets/class-menu-widget.php
-msgid "Nav Menu (Doctor)"
+msgid "Nav Menu (Flow)"
 msgstr ""
 
 #: widgets/class-menu-widget.php
@@ -326,7 +326,7 @@ msgid "Select a menu in the widget settings."
 msgstr ""
 
 #: widgets/class-hamburger-widget.php
-msgid "Mobile Hamburger (Doctor)"
+msgid "Mobile Hamburger (Flow)"
 msgstr ""
 
 #: widgets/class-hamburger-widget.php

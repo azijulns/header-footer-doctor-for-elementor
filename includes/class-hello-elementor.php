@@ -2,11 +2,11 @@
 /**
  * Hello Elementor theme integration.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  */
 
-namespace HFDoctor;
+namespace HFFlow;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
  * actually matches the current request, so an unconfigured plugin never
  * removes the theme chrome.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  * @see     Templates::resolve()
  * @internal
@@ -60,7 +60,7 @@ class Hello_Elementor {
 			return;
 		}
 
-		require HFDOCTOR_DIR . 'includes/templates/header.php';
+		require HFFLOW_DIR . 'includes/templates/header.php';
 
 		// The plugin template already ran wp_head(); stop the theme repeating it.
 		remove_all_actions( 'wp_head' );
@@ -81,7 +81,7 @@ class Hello_Elementor {
 			return;
 		}
 
-		require HFDOCTOR_DIR . 'includes/templates/footer.php';
+		require HFFLOW_DIR . 'includes/templates/footer.php';
 
 		// The plugin template already ran wp_footer(); stop the theme repeating it.
 		remove_all_actions( 'wp_footer' );

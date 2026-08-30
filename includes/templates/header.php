@@ -4,7 +4,7 @@
  *
  * Loaded in place of the theme's `header.php`.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  */
 
@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 <?php wp_body_open(); ?>
 
 <a class="skip-link screen-reader-text" href="#content">
-	<?php esc_html_e( 'Skip to content', 'header-footer-doctor-for-elementor' ); ?>
+	<?php esc_html_e( 'Skip to content', 'headerfooterflow-for-elementor' ); ?>
 </a>
 
 <?php
@@ -32,4 +32,4 @@ defined( 'ABSPATH' ) || exit;
  *
  * @since 1.0.0
  */
-do_action( 'hfdoctor_header' );
+do_action( 'hfflow_header' );

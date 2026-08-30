@@ -1,4 +1,4 @@
-=== Header Footer Doctor for Elementor ===
+=== HeaderFooterFlow for Elementor ===
 Contributors: azijulhaque076
 Tags: elementor, header, footer, header footer builder, hello elementor
 Requires at least: 6.0
@@ -12,7 +12,7 @@ Design your site header and footer in Elementor, then control exactly where each
 
 == Description ==
 
-**Header Footer Doctor** lets you build your site header and footer as ordinary Elementor layouts, then decide page by page which one is used.
+**HeaderFooterFlow** lets you build your site header and footer as ordinary Elementor layouts, then decide page by page which one is used.
 
 No theme file editing, no child theme, no code. Create a template, mark it as a header or a footer, pick where it should show, and publish.
 
@@ -43,8 +43,8 @@ This plugin extends **Elementor**, a separate plugin developed by Elementor Ltd.
 
 1. Make sure the **Hello Elementor** theme and the **Elementor** plugin are both installed and active.
 2. Upload the plugin through **Plugins → Add New → Upload Plugin**, or install it directly from the WordPress plugin directory.
-3. Activate **Header Footer Doctor for Elementor**.
-4. Go to **Header Footer Doctor → Add New**.
+3. Activate **HeaderFooterFlow for Elementor**.
+4. Go to **HeaderFooterFlow → Add New**.
 5. Give the template a name, choose **Header** or **Footer** under *Template Type*, and pick a rule under *Display Rules*.
 6. Click **Edit with Elementor** and design the layout.
 7. Publish. The template now replaces your theme header or footer wherever the rule matches.
@@ -69,17 +69,17 @@ The more specific rule. The order is: Specific pages (highest) → Homepage only
 
 = How do I open the mobile off-canvas menu? =
 
-Assign a menu to **Appearance → Menus → Header Footer Doctor — Off-canvas Menu**. Then drop the **Mobile Hamburger (Doctor)** widget into your header template — it is wired to the panel out of the box.
+Assign a menu to **Appearance → Menus → HeaderFooterFlow — Off-canvas Menu**. Then drop the **Mobile Hamburger (Flow)** widget into your header template — it is wired to the panel out of the box.
 
-If you would rather use your own element, add the class `hfdoctor-offcanvas-open` to any element in your Elementor header and it becomes a trigger. An element with the `hamburger` class also works out of the box.
+If you would rather use your own element, add the class `hfflow-offcanvas-open` to any element in your Elementor header and it becomes a trigger. An element with the `hamburger` class also works out of the box.
 
 = Can I change the off-canvas colours? =
 
-Two ways. The easy one: select the **Mobile Hamburger (Doctor)** widget, turn on **Customize The Panel** in the Content tab, and use the Panel, Panel Header and Panel Menu sections that appear in the Style tab.
+Two ways. The easy one: select the **Mobile Hamburger (Flow)** widget, turn on **Customize The Panel** in the Content tab, and use the Panel, Panel Header and Panel Menu sections that appear in the Style tab.
 
 The panel is shared by the whole site, so turn that switch on for one hamburger widget only — otherwise two widgets write competing rules for the same panel.
 
-The manual one: the panel is styled entirely with CSS custom properties such as `--hfdoctor-offcanvas-bg`, `--hfdoctor-offcanvas-color`, `--hfdoctor-offcanvas-accent` and `--hfdoctor-offcanvas-width`. Override them in your theme or in Elementor custom CSS.
+The manual one: the panel is styled entirely with CSS custom properties such as `--hfflow-offcanvas-bg`, `--hfflow-offcanvas-color`, `--hfflow-offcanvas-accent` and `--hfflow-offcanvas-width`. Override them in your theme or in Elementor custom CSS.
 
 = Does uninstalling remove my templates? =
 
@@ -97,7 +97,7 @@ Yes. Deleting the plugin permanently removes the header/footer templates it crea
 == Changelog ==
 
 = 1.1.0 =
-* New **Mobile Hamburger (Doctor)** widget: opens the off-canvas panel, with animated lines (two, three or four) or a custom icon, an optional label before or after the icon, an accessible label, alignment, and per-breakpoint show/hide.
+* New **Mobile Hamburger (Flow)** widget: opens the off-canvas panel, with animated lines (two, three or four) or a custom icon, an optional label before or after the icon, an accessible label, alignment, and per-breakpoint show/hide.
 * Hamburger style controls: icon size, padding, border, border radius, box shadow, normal and hover colours, line thickness, line gap, line radius, and label typography.
 * Nav Menu widget: new Layout control (horizontal or vertical), responsive alignment, and an optional submenu arrow.
 * Nav Menu widget: full Style tab — typography, normal/hover/active text and background colours, item padding, space between items, border and border radius.
@@ -130,7 +130,7 @@ Yes. Deleting the plugin permanently removes the header/footer templates it crea
 == Upgrade Notice ==
 
 = 1.1.0 =
-Adds the Mobile Hamburger widget and a full Style tab for the Nav Menu widget. Templates, menus and display rules are unaffected, but the Nav Menu widget now ships its own base layout (a flex row with a 24px gap and no list bullets). If you were styling `.hfdoctor-menu` by hand, check that page after updating.
+Adds the Mobile Hamburger widget and a full Style tab for the Nav Menu widget. Templates, menus and display rules are unaffected, but the Nav Menu widget now ships its own base layout (a flex row with a 24px gap and no list bullets). If you were styling `.hfflow-menu` by hand, check that page after updating.
 
 = 1.0.1 =
 Compatibility and housekeeping update. Existing templates and display rules are unaffected.

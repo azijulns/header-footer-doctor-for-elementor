@@ -4,7 +4,7 @@
  *
  * Runs on plugin deletion only — deactivating the plugin leaves data intact.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  */
 
@@ -17,7 +17,7 @@ defined( 'WP_UNINSTALL_PLUGIN' ) || exit;
  *
  * @var string
  */
-const HFDOCTOR_UNINSTALL_POST_TYPE = 'hfdoctor_template';
+const HFFLOW_UNINSTALL_POST_TYPE = 'hfflow_template';
 
 /**
  * Delete every template post (and its meta) on a single site.
@@ -26,9 +26,9 @@ const HFDOCTOR_UNINSTALL_POST_TYPE = 'hfdoctor_template';
  *
  * @return void
  */
-function hfdoctor_uninstall_site(): void {
+function hfflow_uninstall_site(): void {
 	$args = array(
-		'post_type'              => HFDOCTOR_UNINSTALL_POST_TYPE,
+		'post_type'              => HFFLOW_UNINSTALL_POST_TYPE,
 		'post_status'            => 'any',
 		'posts_per_page'         => 200,
 		'fields'                 => 'ids',
@@ -61,20 +61,20 @@ function hfdoctor_uninstall_site(): void {
 }
 
 if ( is_multisite() ) {
-	$hfdoctor_site_ids = get_sites(
+	$hfflow_site_ids = get_sites(
 		array(
 			'fields' => 'ids',
 			'number' => 0,
 		)
 	);
 
-	foreach ( $hfdoctor_site_ids as $hfdoctor_site_id ) {
-		switch_to_blog( (int) $hfdoctor_site_id );
-		hfdoctor_uninstall_site();
+	foreach ( $hfflow_site_ids as $hfflow_site_id ) {
+		switch_to_blog( (int) $hfflow_site_id );
+		hfflow_uninstall_site();
 		restore_current_blog();
 	}
 
-	unset( $hfdoctor_site_ids, $hfdoctor_site_id );
+	unset( $hfflow_site_ids, $hfflow_site_id );
 } else {
-	hfdoctor_uninstall_site();
+	hfflow_uninstall_site();
 }

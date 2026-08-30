@@ -1,5 +1,5 @@
 /**
- * Header Footer Doctor for Elementor — off-canvas mobile menu.
+ * HeaderFooterFlow for Elementor — off-canvas mobile menu.
  *
  * Opens on any element matching the configured trigger selector, closes on the
  * close button, the overlay, or Escape. Keeps focus inside the panel while it
@@ -20,7 +20,7 @@
 	 * @param {boolean} expanded Whether the panel is open.
 	 */
 	function setExpanded( expanded ) {
-		var triggers = document.querySelectorAll( '[aria-controls="hfdoctor-offcanvas"][aria-expanded]' );
+		var triggers = document.querySelectorAll( '[aria-controls="hfflow-offcanvas"][aria-expanded]' );
 		var i;
 
 		for ( i = 0; i < triggers.length; i++ ) {
@@ -48,7 +48,7 @@
 		void panel.offsetWidth;
 
 		panel.classList.add( 'is-open' );
-		document.body.classList.add( 'hfdoctor-offcanvas-active' );
+		document.body.classList.add( 'hfflow-offcanvas-active' );
 		setExpanded( true );
 
 		var first = panel.querySelector( FOCUSABLE );
@@ -67,7 +67,7 @@
 		}
 
 		panel.classList.remove( 'is-open' );
-		document.body.classList.remove( 'hfdoctor-offcanvas-active' );
+		document.body.classList.remove( 'hfflow-offcanvas-active' );
 		setExpanded( false );
 
 		if ( overlay ) {
@@ -110,15 +110,15 @@
 	}
 
 	document.addEventListener( 'DOMContentLoaded', function () {
-		panel = document.getElementById( 'hfdoctor-offcanvas' );
+		panel = document.getElementById( 'hfflow-offcanvas' );
 
 		if ( ! panel ) {
 			return;
 		}
 
-		overlay = document.querySelector( '.hfdoctor-offcanvas__overlay' );
+		overlay = document.querySelector( '.hfflow-offcanvas__overlay' );
 
-		var selector = ( window.hfdoctorOffcanvas && window.hfdoctorOffcanvas.trigger ) || '';
+		var selector = ( window.hfflowOffcanvas && window.hfflowOffcanvas.trigger ) || '';
 
 		// Delegated so triggers rendered later by Elementor still work.
 		document.addEventListener( 'click', function ( event ) {
@@ -129,7 +129,7 @@
 				return;
 			}
 
-			if ( event.target.closest( '.hfdoctor-offcanvas__close' ) ) {
+			if ( event.target.closest( '.hfflow-offcanvas__close' ) ) {
 				event.preventDefault();
 				close();
 

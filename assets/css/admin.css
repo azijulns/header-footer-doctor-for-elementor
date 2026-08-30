@@ -1,26 +1,26 @@
 /**
- * Header Footer Doctor for Elementor — template edit screen meta boxes.
+ * HeaderFooterFlow for Elementor — template edit screen meta boxes.
  */
 
-.hfdoctor-field {
+.hfflow-field {
 	margin-bottom: 12px;
 }
 
-.hfdoctor-field > label {
+.hfflow-field > label {
 	display: block;
 	margin-bottom: 6px;
 	font-weight: 600;
 	color: #1d2327;
 }
 
-.hfdoctor-field .description {
+.hfflow-field .description {
 	margin-top: 6px;
 	color: #646970;
 	font-size: 12px;
 	line-height: 1.5;
 }
 
-.hfdoctor-pagepicker {
+.hfflow-pagepicker {
 	margin-top: 14px;
 	padding: 12px;
 	background: #f6f7f7;
@@ -28,22 +28,22 @@
 	border-radius: 4px;
 }
 
-.hfdoctor-pagepicker[hidden] {
+.hfflow-pagepicker[hidden] {
 	display: none;
 }
 
-.hfdoctor-pagepicker > label {
+.hfflow-pagepicker > label {
 	display: block;
 	margin-bottom: 6px;
 	font-weight: 600;
 	color: #1d2327;
 }
 
-.hfdoctor-pagepicker__search {
+.hfflow-pagepicker__search {
 	margin-bottom: 8px;
 }
 
-.hfdoctor-pagepicker__list {
+.hfflow-pagepicker__list {
 	max-height: 220px;
 	margin: 0;
 	padding: 6px 8px;
@@ -54,16 +54,16 @@
 	border-radius: 4px;
 }
 
-.hfdoctor-pagepicker__item {
+.hfflow-pagepicker__item {
 	margin: 0;
 	padding: 3px 0;
 }
 
-.hfdoctor-pagepicker__item[hidden] {
+.hfflow-pagepicker__item[hidden] {
 	display: none;
 }
 
-.hfdoctor-pagepicker__item label {
+.hfflow-pagepicker__item label {
 	display: flex;
 	gap: 6px;
 	align-items: flex-start;
@@ -71,23 +71,23 @@
 	cursor: pointer;
 }
 
-.hfdoctor-pagepicker__item input[type="checkbox"] {
+.hfflow-pagepicker__item input[type="checkbox"] {
 	margin: 2px 0 0;
 	flex: 0 0 auto;
 }
 
-.hfdoctor-pagepicker__empty {
+.hfflow-pagepicker__empty {
 	margin: 8px 0 0;
 	color: #646970;
 	font-size: 12px;
 	font-style: italic;
 }
 
-.hfdoctor-pagepicker__empty[hidden] {
+.hfflow-pagepicker__empty[hidden] {
 	display: none;
 }
 
-.hfdoctor-pagepicker__count {
+.hfflow-pagepicker__count {
 	font-weight: 600;
 	color: #2271b1;
 }

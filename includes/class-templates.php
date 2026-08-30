@@ -2,18 +2,18 @@
 /**
  * Header/footer template post type, meta boxes, matching and rendering.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  */
 
-namespace HFDoctor;
+namespace HFFlow;
 
 defined( 'ABSPATH' ) || exit;
 
 /**
  * Registers the template post type and resolves which template renders where.
  *
- * @package HeaderFooterDoctor
+ * @package HeaderFooterFlow
  * @since   1.0.0
  * @api
  */
@@ -24,21 +24,21 @@ class Templates {
 	 *
 	 * @var string
 	 */
-	public const POST_TYPE = 'hfdoctor_template';
+	public const POST_TYPE = 'hfflow_template';
 
 	/**
 	 * Post meta key holding the template type (`header` or `footer`).
 	 *
 	 * @var string
 	 */
-	public const META_TYPE = '_hfdoctor_template_type';
+	public const META_TYPE = '_hfflow_template_type';
 
 	/**
 	 * Post meta key holding the display rules array.
 	 *
 	 * @var string
 	 */
-	public const META_RULES = '_hfdoctor_display_rules';
+	public const META_RULES = '_hfflow_display_rules';
 
 	/**
 	 * Resolved templates, keyed by template type, memoised per request.
@@ -63,8 +63,8 @@ class Templates {
 		add_filter( 'manage_' . self::POST_TYPE . '_posts_columns', array( $this, 'admin_columns' ) );
 		add_action( 'manage_' . self::POST_TYPE . '_posts_custom_column', array( $this, 'render_admin_column' ), 10, 2 );
 
-		add_action( 'hfdoctor_header', array( $this, 'render_header' ) );
-		add_action( 'hfdoctor_footer', array( $this, 'render_footer' ) );
+		add_action( 'hfflow_header', array( $this, 'render_header' ) );
+		add_action( 'hfflow_footer', array( $this, 'render_footer' ) );
 
 		add_filter( 'wp_robots', array( $this, 'filter_robots' ), 20 );
 		add_action( 'send_headers', array( $this, 'send_noindex_header' ) );
@@ -83,19 +83,19 @@ class Templates {
 	 */
 	public function register_post_type(): void {
 		$labels = array(
-			'name'               => __( 'Header/Footer', 'header-footer-doctor-for-elementor' ),
-			'singular_name'      => __( 'Template', 'header-footer-doctor-for-elementor' ),
-			'menu_name'          => __( 'Header Footer Doctor', 'header-footer-doctor-for-elementor' ),
-			'name_admin_bar'     => __( 'Template', 'header-footer-doctor-for-elementor' ),
-			'add_new'            => __( 'Add New', 'header-footer-doctor-for-elementor' ),
-			'add_new_item'       => __( 'Add New Template', 'header-footer-doctor-for-elementor' ),
-			'new_item'           => __( 'New Template', 'header-footer-doctor-for-elementor' ),
-			'edit_item'          => __( 'Edit Template', 'header-footer-doctor-for-elementor' ),
-			'view_item'          => __( 'View Template', 'header-footer-doctor-for-elementor' ),
-			'all_items'          => __( 'All Templates', 'header-footer-doctor-for-elementor' ),
-			'search_items'       => __( 'Search Templates', 'header-footer-doctor-for-elementor' ),
-			'not_found'          => __( 'No templates found.', 'header-footer-doctor-for-elementor' ),
-			'not_found_in_trash' => __( 'No templates found in Trash.', 'header-footer-doctor-for-elementor' ),
+			'name'               => __( 'Header/Footer', 'headerfooterflow-for-elementor' ),
+			'singular_name'      => __( 'Template', 'headerfooterflow-for-elementor' ),
+			'menu_name'          => __( 'HeaderFooterFlow', 'headerfooterflow-for-elementor' ),
+			'name_admin_bar'     => __( 'Template', 'headerfooterflow-for-elementor' ),
+			'add_new'            => __( 'Add New', 'headerfooterflow-for-elementor' ),
+			'add_new_item'       => __( 'Add New Template', 'headerfooterflow-for-elementor' ),
+			'new_item'           => __( 'New Template', 'headerfooterflow-for-elementor' ),
+			'edit_item'          => __( 'Edit Template', 'headerfooterflow-for-elementor' ),
+			'view_item'          => __( 'View Template', 'headerfooterflow-for-elementor' ),
+			'all_items'          => __( 'All Templates', 'headerfooterflow-for-elementor' ),
+			'search_items'       => __( 'Search Templates', 'headerfooterflow-for-elementor' ),
+			'not_found'          => __( 'No templates found.', 'headerfooterflow-for-elementor' ),
+			'not_found_in_trash' => __( 'No templates found in Trash.', 'headerfooterflow-for-elementor' ),
 		);
 
 		register_post_type(
@@ -182,8 +182,8 @@ class Templates {
 	 */
 	public function register_meta_boxes(): void {
 		add_meta_box(
-			'hfdoctor_template_type',
-			__( 'Template Type', 'header-footer-doctor-for-elementor' ),
+			'hfflow_template_type',
+			__( 'Template Type', 'headerfooterflow-for-elementor' ),
 			array( $this, 'render_type_meta_box' ),
 			self::POST_TYPE,
 			'side',
@@ -191,8 +191,8 @@ class Templates {
 		);
 
 		add_meta_box(
-			'hfdoctor_display_rules',
-			__( 'Display Rules', 'header-footer-doctor-for-elementor' ),
+			'hfflow_display_rules',
+			__( 'Display Rules', 'headerfooterflow-for-elementor' ),
 			array( $this, 'render_rules_meta_box' ),
 			self::POST_TYPE,
 			'side',
@@ -210,25 +210,25 @@ class Templates {
 	 * @internal
 	 */
 	public function render_type_meta_box( \WP_Post $post ): void {
-		wp_nonce_field( 'hfdoctor_save_meta', 'hfdoctor_meta_nonce' );
+		wp_nonce_field( 'hfflow_save_meta', 'hfflow_meta_nonce' );
 
 		$value = (string) get_post_meta( $post->ID, self::META_TYPE, true );
 		?>
-		<div class="hfdoctor-field">
-			<label for="hfdoctor_template_type_field">
-				<?php esc_html_e( 'This template is a', 'header-footer-doctor-for-elementor' ); ?>
+		<div class="hfflow-field">
+			<label for="hfflow_template_type_field">
+				<?php esc_html_e( 'This template is a', 'headerfooterflow-for-elementor' ); ?>
 			</label>
-			<select name="hfdoctor_template_type" id="hfdoctor_template_type_field" class="widefat">
-				<option value=""><?php esc_html_e( '— Select type —', 'header-footer-doctor-for-elementor' ); ?></option>
+			<select name="hfflow_template_type" id="hfflow_template_type_field" class="widefat">
+				<option value=""><?php esc_html_e( '— Select type —', 'headerfooterflow-for-elementor' ); ?></option>
 				<option value="header" <?php selected( $value, 'header' ); ?>>
-					<?php esc_html_e( 'Header', 'header-footer-doctor-for-elementor' ); ?>
+					<?php esc_html_e( 'Header', 'headerfooterflow-for-elementor' ); ?>
 				</option>
 				<option value="footer" <?php selected( $value, 'footer' ); ?>>
-					<?php esc_html_e( 'Footer', 'header-footer-doctor-for-elementor' ); ?>
+					<?php esc_html_e( 'Footer', 'headerfooterflow-for-elementor' ); ?>
 				</option>
 			</select>
 			<p class="description">
-				<?php esc_html_e( 'Choose whether this template replaces the site header or the site footer.', 'header-footer-doctor-for-elementor' ); ?>
+				<?php esc_html_e( 'Choose whether this template replaces the site header or the site footer.', 'headerfooterflow-for-elementor' ); ?>
 			</p>
 		</div>
 		<?php
@@ -260,11 +260,11 @@ class Templates {
 			)
 		);
 		?>
-		<div class="hfdoctor-field">
-			<label for="hfdoctor_rule_type_field">
-				<?php esc_html_e( 'Display on', 'header-footer-doctor-for-elementor' ); ?>
+		<div class="hfflow-field">
+			<label for="hfflow_rule_type_field">
+				<?php esc_html_e( 'Display on', 'headerfooterflow-for-elementor' ); ?>
 			</label>
-			<select name="hfdoctor_rule_type" id="hfdoctor_rule_type_field" class="widefat hfdoctor-rule-type">
+			<select name="hfflow_rule_type" id="hfflow_rule_type_field" class="widefat hfflow-rule-type">
 				<?php foreach ( $this->rule_type_labels() as $key => $label ) : ?>
 					<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $rules['type'], $key ); ?>>
 						<?php echo esc_html( $label ); ?>
@@ -272,33 +272,33 @@ class Templates {
 				<?php endforeach; ?>
 			</select>
 			<p class="description">
-				<?php esc_html_e( 'More specific rules win: specific pages beat homepage, which beats posts and pages, which beat global.', 'header-footer-doctor-for-elementor' ); ?>
+				<?php esc_html_e( 'More specific rules win: specific pages beat homepage, which beats posts and pages, which beat global.', 'headerfooterflow-for-elementor' ); ?>
 			</p>
 		</div>
 
-		<div class="hfdoctor-pagepicker" <?php echo 'specific' === $rules['type'] ? '' : 'hidden'; ?>>
-			<label for="hfdoctor-pagepicker-search">
-				<?php esc_html_e( 'Select pages', 'header-footer-doctor-for-elementor' ); ?>
+		<div class="hfflow-pagepicker" <?php echo 'specific' === $rules['type'] ? '' : 'hidden'; ?>>
+			<label for="hfflow-pagepicker-search">
+				<?php esc_html_e( 'Select pages', 'headerfooterflow-for-elementor' ); ?>
 			</label>
 
 			<input
 				type="search"
-				id="hfdoctor-pagepicker-search"
-				class="hfdoctor-pagepicker__search widefat"
-				placeholder="<?php esc_attr_e( 'Search pages…', 'header-footer-doctor-for-elementor' ); ?>"
+				id="hfflow-pagepicker-search"
+				class="hfflow-pagepicker__search widefat"
+				placeholder="<?php esc_attr_e( 'Search pages…', 'headerfooterflow-for-elementor' ); ?>"
 				autocomplete="off"
 			/>
 
 			<?php if ( empty( $pages ) ) : ?>
-				<p class="description"><?php esc_html_e( 'No published pages yet.', 'header-footer-doctor-for-elementor' ); ?></p>
+				<p class="description"><?php esc_html_e( 'No published pages yet.', 'headerfooterflow-for-elementor' ); ?></p>
 			<?php else : ?>
-				<ul class="hfdoctor-pagepicker__list">
+				<ul class="hfflow-pagepicker__list">
 					<?php foreach ( $pages as $page ) : ?>
-						<li class="hfdoctor-pagepicker__item">
+						<li class="hfflow-pagepicker__item">
 							<label>
 								<input
 									type="checkbox"
-									name="hfdoctor_rule_pages[]"
+									name="hfflow_rule_pages[]"
 									value="<?php echo esc_attr( (string) $page->ID ); ?>"
 									<?php checked( in_array( (int) $page->ID, $selected, true ) ); ?>
 								/>
@@ -307,12 +307,12 @@ class Templates {
 						</li>
 					<?php endforeach; ?>
 				</ul>
-				<p class="hfdoctor-pagepicker__empty" hidden>
-					<?php esc_html_e( 'No pages match your search.', 'header-footer-doctor-for-elementor' ); ?>
+				<p class="hfflow-pagepicker__empty" hidden>
+					<?php esc_html_e( 'No pages match your search.', 'headerfooterflow-for-elementor' ); ?>
 				</p>
 				<p class="description">
-					<span class="hfdoctor-pagepicker__count"><?php echo esc_html( (string) count( $selected ) ); ?></span>
-					<?php esc_html_e( 'selected', 'header-footer-doctor-for-elementor' ); ?>
+					<span class="hfflow-pagepicker__count"><?php echo esc_html( (string) count( $selected ) ); ?></span>
+					<?php esc_html_e( 'selected', 'headerfooterflow-for-elementor' ); ?>
 				</p>
 			<?php endif; ?>
 		</div>
@@ -329,11 +329,11 @@ class Templates {
 	 */
 	private function rule_type_labels(): array {
 		return array(
-			'all'      => __( 'Entire site (global)', 'header-footer-doctor-for-elementor' ),
-			'specific' => __( 'Specific pages', 'header-footer-doctor-for-elementor' ),
-			'homepage' => __( 'Homepage only', 'header-footer-doctor-for-elementor' ),
-			'posts'    => __( 'All single posts', 'header-footer-doctor-for-elementor' ),
-			'pages'    => __( 'All pages', 'header-footer-doctor-for-elementor' ),
+			'all'      => __( 'Entire site (global)', 'headerfooterflow-for-elementor' ),
+			'specific' => __( 'Specific pages', 'headerfooterflow-for-elementor' ),
+			'homepage' => __( 'Homepage only', 'headerfooterflow-for-elementor' ),
+			'posts'    => __( 'All single posts', 'headerfooterflow-for-elementor' ),
+			'pages'    => __( 'All pages', 'headerfooterflow-for-elementor' ),
 		);
 	}
 
@@ -356,11 +356,11 @@ class Templates {
 			return;
 		}
 
-		$nonce = isset( $_POST['hfdoctor_meta_nonce'] )
-			? sanitize_text_field( wp_unslash( $_POST['hfdoctor_meta_nonce'] ) )
+		$nonce = isset( $_POST['hfflow_meta_nonce'] )
+			? sanitize_text_field( wp_unslash( $_POST['hfflow_meta_nonce'] ) )
 			: '';
 
-		if ( '' === $nonce || ! wp_verify_nonce( $nonce, 'hfdoctor_save_meta' ) ) {
+		if ( '' === $nonce || ! wp_verify_nonce( $nonce, 'hfflow_save_meta' ) ) {
 			return;
 		}
 
@@ -368,8 +368,8 @@ class Templates {
 			return;
 		}
 
-		$type = isset( $_POST['hfdoctor_template_type'] )
-			? sanitize_key( wp_unslash( $_POST['hfdoctor_template_type'] ) )
+		$type = isset( $_POST['hfflow_template_type'] )
+			? sanitize_key( wp_unslash( $_POST['hfflow_template_type'] ) )
 			: '';
 
 		if ( in_array( $type, array( 'header', 'footer' ), true ) ) {
@@ -378,8 +378,8 @@ class Templates {
 			delete_post_meta( $post_id, self::META_TYPE );
 		}
 
-		$rule_type = isset( $_POST['hfdoctor_rule_type'] )
-			? sanitize_key( wp_unslash( $_POST['hfdoctor_rule_type'] ) )
+		$rule_type = isset( $_POST['hfflow_rule_type'] )
+			? sanitize_key( wp_unslash( $_POST['hfflow_rule_type'] ) )
 			: 'all';
 
 		if ( ! array_key_exists( $rule_type, $this->rule_type_labels() ) ) {
@@ -388,8 +388,8 @@ class Templates {
 
 		$pages = array();
 
-		if ( isset( $_POST['hfdoctor_rule_pages'] ) && is_array( $_POST['hfdoctor_rule_pages'] ) ) {
-			$raw   = array_map( 'absint', wp_unslash( $_POST['hfdoctor_rule_pages'] ) );
+		if ( isset( $_POST['hfflow_rule_pages'] ) && is_array( $_POST['hfflow_rule_pages'] ) ) {
+			$raw   = array_map( 'absint', wp_unslash( $_POST['hfflow_rule_pages'] ) );
 			$pages = array_values( array_unique( array_filter( $raw ) ) );
 		}
 
@@ -426,17 +426,17 @@ class Templates {
 		}
 
 		wp_enqueue_style(
-			'hfdoctor-admin',
-			HFDOCTOR_URL . 'assets/css/admin.css',
+			'hfflow-admin',
+			HFFLOW_URL . 'assets/css/admin.css',
 			array(),
-			HFDOCTOR_VERSION
+			HFFLOW_VERSION
 		);
 
 		wp_enqueue_script(
-			'hfdoctor-admin',
-			HFDOCTOR_URL . 'assets/js/admin.js',
+			'hfflow-admin',
+			HFFLOW_URL . 'assets/js/admin.js',
 			array(),
-			HFDOCTOR_VERSION,
+			HFFLOW_VERSION,
 			true
 		);
 	}
@@ -461,8 +461,8 @@ class Templates {
 			$merged[ $key ] = $label;
 
 			if ( 'title' === $key ) {
-				$merged['hfdoctor_type']  = __( 'Type', 'header-footer-doctor-for-elementor' );
-				$merged['hfdoctor_rules'] = __( 'Display On', 'header-footer-doctor-for-elementor' );
+				$merged['hfflow_type']  = __( 'Type', 'headerfooterflow-for-elementor' );
+				$merged['hfflow_rules'] = __( 'Display On', 'headerfooterflow-for-elementor' );
 			}
 		}
 
@@ -480,13 +480,13 @@ class Templates {
 	 * @internal
 	 */
 	public function render_admin_column( string $column, int $post_id ): void {
-		if ( 'hfdoctor_type' === $column ) {
+		if ( 'hfflow_type' === $column ) {
 			$type = (string) get_post_meta( $post_id, self::META_TYPE, true );
 
 			if ( 'header' === $type ) {
-				echo '<strong>' . esc_html__( 'Header', 'header-footer-doctor-for-elementor' ) . '</strong>';
+				echo '<strong>' . esc_html__( 'Header', 'headerfooterflow-for-elementor' ) . '</strong>';
 			} elseif ( 'footer' === $type ) {
-				echo '<strong>' . esc_html__( 'Footer', 'header-footer-doctor-for-elementor' ) . '</strong>';
+				echo '<strong>' . esc_html__( 'Footer', 'headerfooterflow-for-elementor' ) . '</strong>';
 			} else {
 				echo '&mdash;';
 			}
@@ -494,7 +494,7 @@ class Templates {
 			return;
 		}
 
-		if ( 'hfdoctor_rules' !== $column ) {
+		if ( 'hfflow_rules' !== $column ) {
 			return;
 		}
 
@@ -508,7 +508,7 @@ class Templates {
 		}
 
 		if ( empty( $rules['pages'] ) ) {
-			echo esc_html__( 'Specific pages — none selected', 'header-footer-doctor-for-elementor' );
+			echo esc_html__( 'Specific pages — none selected', 'headerfooterflow-for-elementor' );
 
 			return;
 		}
@@ -529,7 +529,7 @@ class Templates {
 		if ( $remaining > 0 ) {
 			$output .= ' ' . sprintf(
 				/* translators: %d: number of additional pages not listed. */
-				_n( '(+%d more)', '(+%d more)', $remaining, 'header-footer-doctor-for-elementor' ),
+				_n( '(+%d more)', '(+%d more)', $remaining, 'headerfooterflow-for-elementor' ),
 				$remaining
 			);
 		}
