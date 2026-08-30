@@ -162,8 +162,8 @@ final class Plugin {
 			$this->notice(
 				sprintf(
 					/* translators: %s: Elementor plugin name, wrapped in <strong>. */
-					esc_html__( 'HeaderFooterFlow requires %s to be installed and activated.', 'headerfooterflow-for-elementor' ),
-					'<strong>' . esc_html__( 'Elementor', 'headerfooterflow-for-elementor' ) . '</strong>'
+					esc_html__( 'HeaderFooterFlow requires %s to be installed and activated.', 'header-footer-doctor-for-elementor' ),
+					'<strong>' . esc_html__( 'Elementor', 'header-footer-doctor-for-elementor' ) . '</strong>'
 				)
 			);
 
@@ -174,8 +174,8 @@ final class Plugin {
 			$this->notice(
 				sprintf(
 					/* translators: 1: Elementor plugin name, 2: minimum required Elementor version. */
-					esc_html__( 'HeaderFooterFlow requires %1$s version %2$s or greater.', 'headerfooterflow-for-elementor' ),
-					'<strong>' . esc_html__( 'Elementor', 'headerfooterflow-for-elementor' ) . '</strong>',
+					esc_html__( 'HeaderFooterFlow requires %1$s version %2$s or greater.', 'header-footer-doctor-for-elementor' ),
+					'<strong>' . esc_html__( 'Elementor', 'header-footer-doctor-for-elementor' ) . '</strong>',
 					'<strong>' . esc_html( HFFLOW_MIN_ELEMENTOR_VERSION ) . '</strong>'
 				)
 			);
@@ -187,8 +187,8 @@ final class Plugin {
 			$this->notice(
 				sprintf(
 					/* translators: %s: Hello Elementor theme name, wrapped in <strong>. */
-					esc_html__( 'HeaderFooterFlow is built for the %s theme. Activate that theme (or a child theme of it) to use the header and footer builder.', 'headerfooterflow-for-elementor' ),
-					'<strong>' . esc_html__( 'Hello Elementor', 'headerfooterflow-for-elementor' ) . '</strong>'
+					esc_html__( 'HeaderFooterFlow is built for the %s theme. Activate that theme (or a child theme of it) to use the header and footer builder.', 'header-footer-doctor-for-elementor' ),
+					'<strong>' . esc_html__( 'Hello Elementor', 'header-footer-doctor-for-elementor' ) . '</strong>'
 				)
 			);
 

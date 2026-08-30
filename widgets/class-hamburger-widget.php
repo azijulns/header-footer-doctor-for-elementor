@@ -52,7 +52,7 @@ class Hamburger_Widget extends Widget_Base {
 	 * @return string
 	 */
 	public function get_title(): string {
-		return esc_html__( 'Mobile Hamburger (Flow)', 'headerfooterflow-for-elementor' );
+		return esc_html__( 'Mobile Hamburger (Flow)', 'header-footer-doctor-for-elementor' );
 	}
 
 	/**
@@ -128,7 +128,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'hfflow_hamburger_section',
 			array(
-				'label' => esc_html__( 'Hamburger', 'headerfooterflow-for-elementor' ),
+				'label' => esc_html__( 'Hamburger', 'header-footer-doctor-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -140,12 +140,12 @@ class Hamburger_Widget extends Widget_Base {
 					'type'            => Controls_Manager::RAW_HTML,
 					'raw'             => sprintf(
 						'<strong>%1$s</strong><br>%2$s',
-						esc_html__( 'No off-canvas menu assigned.', 'headerfooterflow-for-elementor' ),
+						esc_html__( 'No off-canvas menu assigned.', 'header-footer-doctor-for-elementor' ),
 						sprintf(
 							/* translators: %s: link to the WordPress menu locations screen. */
-							esc_html__( 'Assign a menu to the off-canvas location on the %s screen, otherwise this button has no panel to open.', 'headerfooterflow-for-elementor' ),
+							esc_html__( 'Assign a menu to the off-canvas location on the %s screen, otherwise this button has no panel to open.', 'header-footer-doctor-for-elementor' ),
 							'<a href="' . esc_url( admin_url( 'nav-menus.php?action=locations' ) ) . '" target="_blank">' .
-								esc_html__( 'Menus', 'headerfooterflow-for-elementor' ) . '</a>'
+								esc_html__( 'Menus', 'header-footer-doctor-for-elementor' ) . '</a>'
 						)
 					),
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
@@ -156,12 +156,12 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_type',
 			array(
-				'label'   => esc_html__( 'Style', 'headerfooterflow-for-elementor' ),
+				'label'   => esc_html__( 'Style', 'header-footer-doctor-for-elementor' ),
 				'type'    => Controls_Manager::SELECT,
 				'default' => 'lines',
 				'options' => array(
-					'lines' => esc_html__( 'Lines', 'headerfooterflow-for-elementor' ),
-					'icon'  => esc_html__( 'Icon', 'headerfooterflow-for-elementor' ),
+					'lines' => esc_html__( 'Lines', 'header-footer-doctor-for-elementor' ),
+					'icon'  => esc_html__( 'Icon', 'header-footer-doctor-for-elementor' ),
 				),
 			)
 		);
@@ -169,13 +169,13 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_lines',
 			array(
-				'label'     => esc_html__( 'Lines', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Lines', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => '3',
 				'options'   => array(
-					'2' => esc_html__( 'Two', 'headerfooterflow-for-elementor' ),
-					'3' => esc_html__( 'Three', 'headerfooterflow-for-elementor' ),
-					'4' => esc_html__( 'Four', 'headerfooterflow-for-elementor' ),
+					'2' => esc_html__( 'Two', 'header-footer-doctor-for-elementor' ),
+					'3' => esc_html__( 'Three', 'header-footer-doctor-for-elementor' ),
+					'4' => esc_html__( 'Four', 'header-footer-doctor-for-elementor' ),
 				),
 				'condition' => array( 'hfflow_hamburger_type' => 'lines' ),
 			)
@@ -184,11 +184,11 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_animation',
 			array(
-				'label'        => esc_html__( 'Animate To Close Icon', 'headerfooterflow-for-elementor' ),
-				'description'  => esc_html__( 'Morphs the lines into a cross while the panel is open.', 'headerfooterflow-for-elementor' ),
+				'label'        => esc_html__( 'Animate To Close Icon', 'header-footer-doctor-for-elementor' ),
+				'description'  => esc_html__( 'Morphs the lines into a cross while the panel is open.', 'header-footer-doctor-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'headerfooterflow-for-elementor' ),
-				'label_off'    => esc_html__( 'No', 'headerfooterflow-for-elementor' ),
+				'label_on'     => esc_html__( 'Yes', 'header-footer-doctor-for-elementor' ),
+				'label_off'    => esc_html__( 'No', 'header-footer-doctor-for-elementor' ),
 				'default'      => 'yes',
 				'return_value' => 'yes',
 				'condition'    => array(
@@ -201,7 +201,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_icon',
 			array(
-				'label'     => esc_html__( 'Icon', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Icon', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'eicon-menu-bar',
@@ -214,11 +214,11 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_text',
 			array(
-				'label'       => esc_html__( 'Label Text', 'headerfooterflow-for-elementor' ),
-				'description' => esc_html__( 'Optional text beside the icon. Leave empty for an icon-only button.', 'headerfooterflow-for-elementor' ),
+				'label'       => esc_html__( 'Label Text', 'header-footer-doctor-for-elementor' ),
+				'description' => esc_html__( 'Optional text beside the icon. Leave empty for an icon-only button.', 'header-footer-doctor-for-elementor' ),
 				'type'        => Controls_Manager::TEXT,
 				'default'     => '',
-				'placeholder' => esc_html__( 'Menu', 'headerfooterflow-for-elementor' ),
+				'placeholder' => esc_html__( 'Menu', 'header-footer-doctor-for-elementor' ),
 				'separator'   => 'before',
 			)
 		);
@@ -226,12 +226,12 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_text_position',
 			array(
-				'label'     => esc_html__( 'Text Position', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Text Position', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'after',
 				'options'   => array(
-					'before' => esc_html__( 'Before Icon', 'headerfooterflow-for-elementor' ),
-					'after'  => esc_html__( 'After Icon', 'headerfooterflow-for-elementor' ),
+					'before' => esc_html__( 'Before Icon', 'header-footer-doctor-for-elementor' ),
+					'after'  => esc_html__( 'After Icon', 'header-footer-doctor-for-elementor' ),
 				),
 				'condition' => array( 'hfflow_hamburger_text!' => '' ),
 			)
@@ -240,10 +240,10 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_aria_label',
 			array(
-				'label'       => esc_html__( 'Accessible Label', 'headerfooterflow-for-elementor' ),
-				'description' => esc_html__( 'Read out by screen readers. Used only when there is no label text.', 'headerfooterflow-for-elementor' ),
+				'label'       => esc_html__( 'Accessible Label', 'header-footer-doctor-for-elementor' ),
+				'description' => esc_html__( 'Read out by screen readers. Used only when there is no label text.', 'header-footer-doctor-for-elementor' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => esc_html__( 'Open menu', 'headerfooterflow-for-elementor' ),
+				'default'     => esc_html__( 'Open menu', 'header-footer-doctor-for-elementor' ),
 				'condition'   => array( 'hfflow_hamburger_text' => '' ),
 			)
 		);
@@ -251,20 +251,20 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_hamburger_align',
 			array(
-				'label'     => esc_html__( 'Alignment', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Alignment', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'separator' => 'before',
 				'options'   => array(
 					'flex-start' => array(
-						'title' => esc_html__( 'Left', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Left', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-text-align-left',
 					),
 					'center'     => array(
-						'title' => esc_html__( 'Center', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Center', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-text-align-center',
 					),
 					'flex-end'   => array(
-						'title' => esc_html__( 'Right', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Right', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
@@ -278,12 +278,12 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_hamburger_visibility',
 			array(
-				'label'          => esc_html__( 'Visibility', 'headerfooterflow-for-elementor' ),
-				'description'    => esc_html__( 'Hide the button on the breakpoints where the full menu is already visible.', 'headerfooterflow-for-elementor' ),
+				'label'          => esc_html__( 'Visibility', 'header-footer-doctor-for-elementor' ),
+				'description'    => esc_html__( 'Hide the button on the breakpoints where the full menu is already visible.', 'header-footer-doctor-for-elementor' ),
 				'type'           => Controls_Manager::SELECT,
 				'options'        => array(
-					'flex' => esc_html__( 'Show', 'headerfooterflow-for-elementor' ),
-					'none' => esc_html__( 'Hide', 'headerfooterflow-for-elementor' ),
+					'flex' => esc_html__( 'Show', 'header-footer-doctor-for-elementor' ),
+					'none' => esc_html__( 'Hide', 'header-footer-doctor-for-elementor' ),
 				),
 				'default'        => 'flex',
 				'tablet_default' => 'flex',
@@ -297,11 +297,11 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_panel_style',
 			array(
-				'label'        => esc_html__( 'Customize The Panel', 'headerfooterflow-for-elementor' ),
-				'description'  => esc_html__( 'Adds Panel, Panel Header and Panel Menu sections to the Style tab. The off-canvas panel is shared by the whole site, so turn this on for one hamburger widget only.', 'headerfooterflow-for-elementor' ),
+				'label'        => esc_html__( 'Customize The Panel', 'header-footer-doctor-for-elementor' ),
+				'description'  => esc_html__( 'Adds Panel, Panel Header and Panel Menu sections to the Style tab. The off-canvas panel is shared by the whole site, so turn this on for one hamburger widget only.', 'header-footer-doctor-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Yes', 'headerfooterflow-for-elementor' ),
-				'label_off'    => esc_html__( 'No', 'headerfooterflow-for-elementor' ),
+				'label_on'     => esc_html__( 'Yes', 'header-footer-doctor-for-elementor' ),
+				'label_off'    => esc_html__( 'No', 'header-footer-doctor-for-elementor' ),
 				'default'      => '',
 				'return_value' => 'yes',
 				'separator'    => 'before',
@@ -323,7 +323,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'hfflow_hamburger_button_style',
 			array(
-				'label' => esc_html__( 'Button', 'headerfooterflow-for-elementor' ),
+				'label' => esc_html__( 'Button', 'header-footer-doctor-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -331,7 +331,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_hamburger_size',
 			array(
-				'label'      => esc_html__( 'Icon Size', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Icon Size', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'range'      => array(
@@ -363,7 +363,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_hamburger_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Padding', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem', '%' ),
 				'selectors'  => array(
@@ -375,7 +375,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_hamburger_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Border Radius', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem', '%' ),
 				'selectors'  => array(
@@ -388,13 +388,13 @@ class Hamburger_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_hamburger_button_normal',
-			array( 'label' => esc_html__( 'Normal', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Normal', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_hamburger_color',
 			array(
-				'label'     => esc_html__( 'Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-hamburger' => 'color: {{VALUE}};',
@@ -405,7 +405,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_bg',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-hamburger' => 'background-color: {{VALUE}};',
@@ -433,13 +433,13 @@ class Hamburger_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_hamburger_button_hover',
-			array( 'label' => esc_html__( 'Hover', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Hover', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_hamburger_color_hover',
 			array(
-				'label'     => esc_html__( 'Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-hamburger:hover, {{WRAPPER}} .hfflow-hamburger:focus-visible' => 'color: {{VALUE}};',
@@ -450,7 +450,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_bg_hover',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-hamburger:hover, {{WRAPPER}} .hfflow-hamburger:focus-visible' => 'background-color: {{VALUE}};',
@@ -461,7 +461,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_border_color_hover',
 			array(
-				'label'     => esc_html__( 'Border Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Border Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-hamburger:hover, {{WRAPPER}} .hfflow-hamburger:focus-visible' => 'border-color: {{VALUE}};',
@@ -488,7 +488,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'hfflow_hamburger_lines_style',
 			array(
-				'label'     => esc_html__( 'Lines', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Lines', 'header-footer-doctor-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array( 'hfflow_hamburger_type' => 'lines' ),
 			)
@@ -497,7 +497,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_hamburger_bar_height',
 			array(
-				'label'      => esc_html__( 'Thickness', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Thickness', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -519,7 +519,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_hamburger_bar_gap',
 			array(
-				'label'      => esc_html__( 'Gap', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Gap', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -541,7 +541,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_bar_radius',
 			array(
-				'label'      => esc_html__( 'Line Radius', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Line Radius', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px' ),
 				'range'      => array(
@@ -575,7 +575,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'hfflow_hamburger_text_style',
 			array(
-				'label'     => esc_html__( 'Label Text', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Label Text', 'header-footer-doctor-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array( 'hfflow_hamburger_text!' => '' ),
 			)
@@ -592,7 +592,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_hamburger_text_color',
 			array(
-				'label'     => esc_html__( 'Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-hamburger__text' => 'color: {{VALUE}};',
@@ -603,7 +603,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_hamburger_text_gap',
 			array(
-				'label'      => esc_html__( 'Gap From Icon', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Gap From Icon', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'range'      => array(
@@ -642,7 +642,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'hfflow_hamburger_panel_box_style',
 			array(
-				'label'     => esc_html__( 'Panel', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Panel', 'header-footer-doctor-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array( 'hfflow_hamburger_panel_style' => 'yes' ),
 			)
@@ -651,17 +651,17 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_panel_side',
 			array(
-				'label'                => esc_html__( 'Slide In From', 'headerfooterflow-for-elementor' ),
+				'label'                => esc_html__( 'Slide In From', 'header-footer-doctor-for-elementor' ),
 				'type'                 => Controls_Manager::CHOOSE,
 				'default'              => 'right',
 				'toggle'               => false,
 				'options'              => array(
 					'left'  => array(
-						'title' => esc_html__( 'Left', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Left', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'right' => array(
-						'title' => esc_html__( 'Right', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Right', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-h-align-right',
 					),
 				),
@@ -678,7 +678,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_width',
 			array(
-				'label'      => esc_html__( 'Width', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Width', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%', 'vw' ),
 				'range'      => array(
@@ -708,7 +708,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_panel_bg',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-bg: {{VALUE}};',
@@ -719,8 +719,8 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_panel_color',
 			array(
-				'label'       => esc_html__( 'Text Color', 'headerfooterflow-for-elementor' ),
-				'description' => esc_html__( 'Base colour for the panel, used by the site title and the close icon.', 'headerfooterflow-for-elementor' ),
+				'label'       => esc_html__( 'Text Color', 'header-footer-doctor-for-elementor' ),
+				'description' => esc_html__( 'Base colour for the panel, used by the site title and the close icon.', 'header-footer-doctor-for-elementor' ),
 				'type'        => Controls_Manager::COLOR,
 				'selectors'   => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-color: {{VALUE}};',
@@ -731,7 +731,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_panel_overlay',
 			array(
-				'label'     => esc_html__( 'Overlay Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Overlay Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas__overlay' => 'background: {{VALUE}};',
@@ -742,7 +742,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Padding', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem', '%' ),
 				'selectors'  => array(
@@ -766,7 +766,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'hfflow_hamburger_panel_bar_style',
 			array(
-				'label'     => esc_html__( 'Panel Header', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Panel Header', 'header-footer-doctor-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array( 'hfflow_hamburger_panel_style' => 'yes' ),
 			)
@@ -775,7 +775,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_bar_padding',
 			array(
-				'label'      => esc_html__( 'Padding', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Padding', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'selectors'  => array(
@@ -787,8 +787,8 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_logo_width',
 			array(
-				'label'       => esc_html__( 'Logo Width', 'headerfooterflow-for-elementor' ),
-				'description' => esc_html__( 'Applies to the site custom logo, when one is set.', 'headerfooterflow-for-elementor' ),
+				'label'       => esc_html__( 'Logo Width', 'header-footer-doctor-for-elementor' ),
+				'description' => esc_html__( 'Applies to the site custom logo, when one is set.', 'header-footer-doctor-for-elementor' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => array( 'px', '%' ),
 				'range'       => array(
@@ -811,7 +811,7 @@ class Hamburger_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'      => 'hfflow_panel_title_typography',
-				'label'     => esc_html__( 'Site Title Typography', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Site Title Typography', 'header-footer-doctor-for-elementor' ),
 				'selector'  => '.hfflow-offcanvas .hfflow-offcanvas__title',
 				'separator' => 'before',
 			)
@@ -820,7 +820,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_panel_close_heading',
 			array(
-				'label'     => esc_html__( 'Close Button', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Close Button', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
 			)
@@ -829,7 +829,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_close_size',
 			array(
-				'label'      => esc_html__( 'Size', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Size', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'range'      => array(
@@ -851,7 +851,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_close_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Border Radius', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%' ),
 				'range'      => array(
@@ -874,13 +874,13 @@ class Hamburger_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_panel_close_normal',
-			array( 'label' => esc_html__( 'Normal', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Normal', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_panel_close_color',
 			array(
-				'label'     => esc_html__( 'Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-close-color: {{VALUE}};',
@@ -891,7 +891,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_panel_close_bg',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-close-bg: {{VALUE}};',
@@ -903,13 +903,13 @@ class Hamburger_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_panel_close_hover',
-			array( 'label' => esc_html__( 'Hover', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Hover', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_panel_close_color_hover',
 			array(
-				'label'     => esc_html__( 'Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-close-color-hover: {{VALUE}};',
@@ -920,7 +920,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_panel_close_bg_hover',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-close-bg-hover: {{VALUE}};',
@@ -947,7 +947,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'hfflow_hamburger_panel_menu_style',
 			array(
-				'label'     => esc_html__( 'Panel Menu', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Panel Menu', 'header-footer-doctor-for-elementor' ),
 				'tab'       => Controls_Manager::TAB_STYLE,
 				'condition' => array( 'hfflow_hamburger_panel_style' => 'yes' ),
 			)
@@ -964,20 +964,20 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_menu_align',
 			array(
-				'label'     => esc_html__( 'Alignment', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Alignment', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'default'   => 'left',
 				'options'   => array(
 					'left'   => array(
-						'title' => esc_html__( 'Left', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Left', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-text-align-left',
 					),
 					'center' => array(
-						'title' => esc_html__( 'Center', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Center', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-text-align-center',
 					),
 					'right'  => array(
-						'title' => esc_html__( 'Right', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Right', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
@@ -991,13 +991,13 @@ class Hamburger_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_panel_menu_normal',
-			array( 'label' => esc_html__( 'Normal', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Normal', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_panel_menu_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Text Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-link-color: {{VALUE}};',
@@ -1008,7 +1008,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_panel_menu_bg',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-link-bg: {{VALUE}};',
@@ -1020,13 +1020,13 @@ class Hamburger_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_panel_menu_hover',
-			array( 'label' => esc_html__( 'Hover', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Hover', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_panel_menu_color_hover',
 			array(
-				'label'     => esc_html__( 'Text Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Text Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-link-hover: {{VALUE}};',
@@ -1037,7 +1037,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_panel_menu_bg_hover',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-link-bg-hover: {{VALUE}};',
@@ -1049,13 +1049,13 @@ class Hamburger_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_panel_menu_active',
-			array( 'label' => esc_html__( 'Active', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Active', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_panel_menu_color_active',
 			array(
-				'label'     => esc_html__( 'Text Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Text Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.hfflow-offcanvas' => '--hfflow-offcanvas-link-active: {{VALUE}};',
@@ -1070,7 +1070,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_nav_padding',
 			array(
-				'label'      => esc_html__( 'Menu Padding', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Menu Padding', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'separator'  => 'before',
@@ -1083,7 +1083,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_link_padding',
 			array(
-				'label'      => esc_html__( 'Item Padding', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Item Padding', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'selectors'  => array(
@@ -1095,7 +1095,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_item_gap',
 			array(
-				'label'      => esc_html__( 'Space Between Items', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Space Between Items', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'range'      => array(
@@ -1117,7 +1117,7 @@ class Hamburger_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_panel_sub_indent',
 			array(
-				'label'      => esc_html__( 'Submenu Indent', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Submenu Indent', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'range'      => array(
@@ -1188,7 +1188,7 @@ class Hamburger_Widget extends Widget_Base {
 			$label = isset( $settings['hfflow_hamburger_aria_label'] ) ? trim( (string) $settings['hfflow_hamburger_aria_label'] ) : '';
 
 			if ( '' === $label ) {
-				$label = esc_html__( 'Open menu', 'headerfooterflow-for-elementor' );
+				$label = esc_html__( 'Open menu', 'header-footer-doctor-for-elementor' );
 			}
 
 			$this->add_render_attribute( 'hfflow_button', 'aria-label', $label );
@@ -1231,7 +1231,7 @@ class Hamburger_Widget extends Widget_Base {
 		if ( ! has_nav_menu( Mobile_Menu::LOCATION ) && \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
 			printf(
 				'<p class="hfflow-hamburger-notice">%s</p>',
-				esc_html__( 'Editor only: assign a menu to the plugin off-canvas menu location under Appearance → Menus, otherwise this button has no panel to open.', 'headerfooterflow-for-elementor' )
+				esc_html__( 'Editor only: assign a menu to the plugin off-canvas menu location under Appearance → Menus, otherwise this button has no panel to open.', 'header-footer-doctor-for-elementor' )
 			);
 		}
 	}

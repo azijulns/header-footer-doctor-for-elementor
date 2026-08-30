@@ -23,7 +23,7 @@ defined( 'ABSPATH' ) || exit;
 <?php wp_body_open(); ?>
 
 <a class="skip-link screen-reader-text" href="#content">
-	<?php esc_html_e( 'Skip to content', 'headerfooterflow-for-elementor' ); ?>
+	<?php esc_html_e( 'Skip to content', 'header-footer-doctor-for-elementor' ); ?>
 </a>
 
 <?php

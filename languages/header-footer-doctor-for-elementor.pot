@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: HeaderFooterFlow for Elementor 1.1.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/headerfooterflow-for-elementor\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/header-footer-doctor-for-elementor\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2026-01-01T00:00:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Domain: headerfooterflow-for-elementor\n"
+"X-Domain: header-footer-doctor-for-elementor\n"
 
 #. translators: %s: Elementor plugin name, wrapped in <strong>.
 #: includes/class-plugin.php

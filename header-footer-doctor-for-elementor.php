@@ -11,7 +11,7 @@
  * Author URI:        https://profiles.wordpress.org/azijulhaque076/
  * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       headerfooterflow-for-elementor
+ * Text Domain:       header-footer-doctor-for-elementor
  * Domain Path:       /languages
  *
  * Elementor tested up to:     4.2.3

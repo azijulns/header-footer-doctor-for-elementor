@@ -45,7 +45,7 @@ class Menu_Widget extends Widget_Base {
 	 * @return string
 	 */
 	public function get_title(): string {
-		return esc_html__( 'Nav Menu (Flow)', 'headerfooterflow-for-elementor' );
+		return esc_html__( 'Nav Menu (Flow)', 'header-footer-doctor-for-elementor' );
 	}
 
 	/**
@@ -117,7 +117,7 @@ class Menu_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'hfflow_menu_section',
 			array(
-				'label' => esc_html__( 'Menu', 'headerfooterflow-for-elementor' ),
+				'label' => esc_html__( 'Menu', 'header-footer-doctor-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -131,12 +131,12 @@ class Menu_Widget extends Widget_Base {
 					'type'            => Controls_Manager::RAW_HTML,
 					'raw'             => sprintf(
 						'<strong>%1$s</strong><br>%2$s',
-						esc_html__( 'No menus found.', 'headerfooterflow-for-elementor' ),
+						esc_html__( 'No menus found.', 'header-footer-doctor-for-elementor' ),
 						sprintf(
 							/* translators: %s: link to the WordPress menus screen. */
-							esc_html__( 'Create one on the %s screen first.', 'headerfooterflow-for-elementor' ),
+							esc_html__( 'Create one on the %s screen first.', 'header-footer-doctor-for-elementor' ),
 							'<a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" target="_blank">' .
-								esc_html__( 'Menus', 'headerfooterflow-for-elementor' ) . '</a>'
+								esc_html__( 'Menus', 'header-footer-doctor-for-elementor' ) . '</a>'
 						)
 					),
 					'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
@@ -146,7 +146,7 @@ class Menu_Widget extends Widget_Base {
 			$this->add_control(
 				'hfflow_menu_id',
 				array(
-					'label'   => esc_html__( 'Select Menu', 'headerfooterflow-for-elementor' ),
+					'label'   => esc_html__( 'Select Menu', 'header-footer-doctor-for-elementor' ),
 					'type'    => Controls_Manager::SELECT,
 					'options' => $menus,
 					'default' => (string) array_key_first( $menus ),
@@ -156,7 +156,7 @@ class Menu_Widget extends Widget_Base {
 			$this->add_control(
 				'hfflow_menu_depth',
 				array(
-					'label'   => esc_html__( 'Maximum Depth', 'headerfooterflow-for-elementor' ),
+					'label'   => esc_html__( 'Maximum Depth', 'header-footer-doctor-for-elementor' ),
 					'type'    => Controls_Manager::NUMBER,
 					'min'     => 1,
 					'max'     => 10,
@@ -169,12 +169,12 @@ class Menu_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_menu_layout',
 			array(
-				'label'        => esc_html__( 'Layout', 'headerfooterflow-for-elementor' ),
+				'label'        => esc_html__( 'Layout', 'header-footer-doctor-for-elementor' ),
 				'type'         => Controls_Manager::SELECT,
 				'default'      => 'horizontal',
 				'options'      => array(
-					'horizontal' => esc_html__( 'Horizontal', 'headerfooterflow-for-elementor' ),
-					'vertical'   => esc_html__( 'Vertical', 'headerfooterflow-for-elementor' ),
+					'horizontal' => esc_html__( 'Horizontal', 'header-footer-doctor-for-elementor' ),
+					'vertical'   => esc_html__( 'Vertical', 'header-footer-doctor-for-elementor' ),
 				),
 				'prefix_class' => 'hfflow-menu-layout-',
 				'separator'    => 'before',
@@ -184,23 +184,23 @@ class Menu_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_menu_align',
 			array(
-				'label'     => esc_html__( 'Alignment', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Alignment', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::CHOOSE,
 				'options'   => array(
 					'flex-start'    => array(
-						'title' => esc_html__( 'Left', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Left', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-text-align-left',
 					),
 					'center'        => array(
-						'title' => esc_html__( 'Center', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Center', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-text-align-center',
 					),
 					'flex-end'      => array(
-						'title' => esc_html__( 'Right', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Right', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-text-align-right',
 					),
 					'space-between' => array(
-						'title' => esc_html__( 'Stretch', 'headerfooterflow-for-elementor' ),
+						'title' => esc_html__( 'Stretch', 'header-footer-doctor-for-elementor' ),
 						'icon'  => 'eicon-text-align-justify',
 					),
 				),
@@ -215,10 +215,10 @@ class Menu_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_menu_arrows',
 			array(
-				'label'        => esc_html__( 'Submenu Arrows', 'headerfooterflow-for-elementor' ),
+				'label'        => esc_html__( 'Submenu Arrows', 'header-footer-doctor-for-elementor' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'Show', 'headerfooterflow-for-elementor' ),
-				'label_off'    => esc_html__( 'Hide', 'headerfooterflow-for-elementor' ),
+				'label_on'     => esc_html__( 'Show', 'header-footer-doctor-for-elementor' ),
+				'label_off'    => esc_html__( 'Hide', 'header-footer-doctor-for-elementor' ),
 				'default'      => 'yes',
 				'return_value' => 'yes',
 				'selectors'    => array(
@@ -242,7 +242,7 @@ class Menu_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'hfflow_menu_items_style',
 			array(
-				'label' => esc_html__( 'Menu Items', 'headerfooterflow-for-elementor' ),
+				'label' => esc_html__( 'Menu Items', 'header-footer-doctor-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -259,13 +259,13 @@ class Menu_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_menu_item_normal',
-			array( 'label' => esc_html__( 'Normal', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Normal', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_menu_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Text Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-menu > li > a' => 'color: {{VALUE}};',
@@ -276,7 +276,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_menu_bg',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-menu > li > a' => 'background-color: {{VALUE}};',
@@ -288,13 +288,13 @@ class Menu_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_menu_item_hover',
-			array( 'label' => esc_html__( 'Hover', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Hover', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_menu_color_hover',
 			array(
-				'label'     => esc_html__( 'Text Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Text Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-menu > li > a:hover, {{WRAPPER}} .hfflow-menu > li > a:focus' => 'color: {{VALUE}};',
@@ -305,7 +305,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_menu_bg_hover',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-menu > li > a:hover, {{WRAPPER}} .hfflow-menu > li > a:focus' => 'background-color: {{VALUE}};',
@@ -317,13 +317,13 @@ class Menu_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_menu_item_active',
-			array( 'label' => esc_html__( 'Active', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Active', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_menu_color_active',
 			array(
-				'label'     => esc_html__( 'Text Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Text Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-menu > li.current-menu-item > a, {{WRAPPER}} .hfflow-menu > li.current-menu-ancestor > a' => 'color: {{VALUE}};',
@@ -334,7 +334,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_menu_bg_active',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-menu > li.current-menu-item > a, {{WRAPPER}} .hfflow-menu > li.current-menu-ancestor > a' => 'background-color: {{VALUE}};',
@@ -349,7 +349,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_menu_item_padding',
 			array(
-				'label'      => esc_html__( 'Item Padding', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Item Padding', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem', '%' ),
 				'separator'  => 'before',
@@ -362,7 +362,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_menu_item_gap',
 			array(
-				'label'      => esc_html__( 'Space Between Items', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Space Between Items', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'range'      => array(
@@ -384,7 +384,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_menu_item_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Border Radius', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem', '%' ),
 				'selectors'  => array(
@@ -416,7 +416,7 @@ class Menu_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'hfflow_menu_dropdown_style',
 			array(
-				'label' => esc_html__( 'Dropdown', 'headerfooterflow-for-elementor' ),
+				'label' => esc_html__( 'Dropdown', 'header-footer-doctor-for-elementor' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -433,13 +433,13 @@ class Menu_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_menu_dropdown_normal',
-			array( 'label' => esc_html__( 'Normal', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Normal', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_menu_dropdown_color',
 			array(
-				'label'     => esc_html__( 'Text Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Text Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-menu .sub-menu a' => 'color: {{VALUE}};',
@@ -450,7 +450,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_menu_dropdown_bg',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#ffffff',
 				'selectors' => array(
@@ -463,13 +463,13 @@ class Menu_Widget extends Widget_Base {
 
 		$this->start_controls_tab(
 			'hfflow_menu_dropdown_hover',
-			array( 'label' => esc_html__( 'Hover', 'headerfooterflow-for-elementor' ) )
+			array( 'label' => esc_html__( 'Hover', 'header-footer-doctor-for-elementor' ) )
 		);
 
 		$this->add_control(
 			'hfflow_menu_dropdown_color_hover',
 			array(
-				'label'     => esc_html__( 'Text Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Text Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-menu .sub-menu a:hover, {{WRAPPER}} .hfflow-menu .sub-menu a:focus' => 'color: {{VALUE}};',
@@ -480,7 +480,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_control(
 			'hfflow_menu_dropdown_bg_hover',
 			array(
-				'label'     => esc_html__( 'Background Color', 'headerfooterflow-for-elementor' ),
+				'label'     => esc_html__( 'Background Color', 'header-footer-doctor-for-elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'{{WRAPPER}} .hfflow-menu .sub-menu a:hover, {{WRAPPER}} .hfflow-menu .sub-menu a:focus' => 'background-color: {{VALUE}};',
@@ -495,7 +495,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_menu_dropdown_width',
 			array(
-				'label'      => esc_html__( 'Width', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Width', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'separator'  => 'before',
@@ -519,7 +519,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_menu_dropdown_padding',
 			array(
-				'label'      => esc_html__( 'Box Padding', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Box Padding', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'selectors'  => array(
@@ -531,7 +531,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_menu_dropdown_item_padding',
 			array(
-				'label'      => esc_html__( 'Item Padding', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Item Padding', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem' ),
 				'default'    => array(
@@ -551,7 +551,7 @@ class Menu_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'hfflow_menu_dropdown_radius',
 			array(
-				'label'      => esc_html__( 'Border Radius', 'headerfooterflow-for-elementor' ),
+				'label'      => esc_html__( 'Border Radius', 'header-footer-doctor-for-elementor' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', 'em', 'rem', '%' ),
 				'selectors'  => array(
@@ -615,7 +615,7 @@ class Menu_Widget extends Widget_Base {
 
 		if ( ! $menu_id ) {
 			if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-				echo '<p>' . esc_html__( 'Select a menu in the widget settings.', 'headerfooterflow-for-elementor' ) . '</p>';
+				echo '<p>' . esc_html__( 'Select a menu in the widget settings.', 'header-footer-doctor-for-elementor' ) . '</p>';
 			}
 
 			return;

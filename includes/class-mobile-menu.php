@@ -51,7 +51,7 @@ class Mobile_Menu {
 	public function register_menu_location(): void {
 		register_nav_menu(
 			self::LOCATION,
-			__( 'HeaderFooterFlow — Off-canvas Menu', 'headerfooterflow-for-elementor' )
+			__( 'HeaderFooterFlow — Off-canvas Menu', 'header-footer-doctor-for-elementor' )
 		);
 	}
 
@@ -140,7 +140,7 @@ class Mobile_Menu {
 		}
 		?>
 		<div class="hfflow-offcanvas" id="hfflow-offcanvas" role="dialog" aria-modal="true"
-			aria-label="<?php esc_attr_e( 'Mobile menu', 'headerfooterflow-for-elementor' ); ?>" hidden>
+			aria-label="<?php esc_attr_e( 'Mobile menu', 'header-footer-doctor-for-elementor' ); ?>" hidden>
 			<div class="hfflow-offcanvas__bar">
 				<?php
 				if ( has_custom_logo() ) {
@@ -153,7 +153,7 @@ class Mobile_Menu {
 				}
 				?>
 				<button type="button" class="hfflow-offcanvas__close"
-					aria-label="<?php esc_attr_e( 'Close menu', 'headerfooterflow-for-elementor' ); ?>">
+					aria-label="<?php esc_attr_e( 'Close menu', 'header-footer-doctor-for-elementor' ); ?>">
 					<svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false"
 						xmlns="http://www.w3.org/2000/svg">
 						<circle cx="20" cy="20" r="19.5" stroke="currentColor" />
@@ -164,7 +164,7 @@ class Mobile_Menu {
 			</div>
 
 			<nav class="hfflow-offcanvas__nav"
-				aria-label="<?php esc_attr_e( 'Mobile navigation', 'headerfooterflow-for-elementor' ); ?>">
+				aria-label="<?php esc_attr_e( 'Mobile navigation', 'header-footer-doctor-for-elementor' ); ?>">
 				<?php
 				wp_nav_menu(
 					array(
