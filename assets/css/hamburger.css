@@ -1,0 +1,128 @@
+/**
+ * Header Footer Doctor for Elementor — hamburger toggle widget.
+ *
+ * Sizing is driven by custom properties so the Elementor style controls only
+ * ever have to set a variable, never fight a selector.
+ */
+
+.hfdoctor-hamburger-wrap {
+	display: flex;
+	align-items: center;
+}
+
+/*
+ * Two classes on purpose. Elementor's Global Theme Style writes
+ * `.elementor-kit-{id} button { ... }` at specificity (0,1,1), which would
+ * otherwise paint this button with the site's global button colours.
+ */
+.hfdoctor-hamburger.hfdoctor-hamburger {
+	--hfdoctor-hamburger-size: 30px;
+	--hfdoctor-hamburger-bar: 2px;
+	--hfdoctor-hamburger-gap: 7px;
+	--hfdoctor-hamburger-bar-radius: 2px;
+	--hfdoctor-hamburger-text-gap: 10px;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: var( --hfdoctor-hamburger-text-gap );
+	width: auto;
+	min-width: 0;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font: inherit;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	background: none;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+	cursor: pointer;
+	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hfdoctor-hamburger:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 3px;
+}
+
+/* Text before the icon. */
+.hfdoctor-hamburger--text-before {
+	flex-direction: row-reverse;
+}
+
+.hfdoctor-hamburger__text {
+	display: inline-block;
+}
+
+/* Animated lines. */
+.hfdoctor-hamburger__box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: var( --hfdoctor-hamburger-gap );
+	width: var( --hfdoctor-hamburger-size );
+	flex: none;
+}
+
+.hfdoctor-hamburger__line {
+	display: block;
+	width: 100%;
+	height: var( --hfdoctor-hamburger-bar );
+	background-color: currentColor;
+	border-radius: var( --hfdoctor-hamburger-bar-radius );
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hfdoctor-hamburger--cross[aria-expanded="true"] .hfdoctor-hamburger__line:nth-child( 1 ) {
+	transform: translateY( calc( var( --hfdoctor-hamburger-bar ) + var( --hfdoctor-hamburger-gap ) ) ) rotate( 45deg );
+}
+
+.hfdoctor-hamburger--cross[aria-expanded="true"] .hfdoctor-hamburger__line:nth-child( 2 ) {
+	opacity: 0;
+}
+
+.hfdoctor-hamburger--cross[aria-expanded="true"] .hfdoctor-hamburger__line:nth-child( 3 ) {
+	transform: translateY( calc( -1 * ( var( --hfdoctor-hamburger-bar ) + var( --hfdoctor-hamburger-gap ) ) ) ) rotate( -45deg );
+}
+
+/* Custom icon. */
+.hfdoctor-hamburger__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+}
+
+.hfdoctor-hamburger__icon i {
+	font-size: var( --hfdoctor-hamburger-size );
+	line-height: 1;
+}
+
+.hfdoctor-hamburger__icon svg {
+	width: var( --hfdoctor-hamburger-size );
+	height: auto;
+	fill: currentColor;
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+
+	.hfdoctor-hamburger,
+	.hfdoctor-hamburger__line {
+		transition: none;
+	}
+}
+
+/* Editor-only hint shown when no off-canvas menu is assigned yet. */
+.hfdoctor-hamburger-notice {
+	margin: 10px 0 0;
+	padding: 10px 12px;
+	color: #4b3200;
+	font-size: 12px;
+	line-height: 1.5;
+	background: #fcf3d8;
+	border-left: 3px solid #dba617;
+}

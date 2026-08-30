@@ -1,0 +1,523 @@
+# Copyright (C) 2026 Azijul Haque
+# This file is distributed under the GPL-2.0-or-later license.
+msgid ""
+msgstr ""
+"Project-Id-Version: Header Footer Doctor for Elementor 1.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/header-footer-doctor-for-elementor\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-01-01T00:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: header-footer-doctor-for-elementor\n"
+
+#. translators: %s: Elementor plugin name, wrapped in <strong>.
+#: includes/class-plugin.php
+msgid "Header Footer Doctor requires %s to be installed and activated."
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Elementor"
+msgstr ""
+
+#. translators: 1: Elementor plugin name, 2: minimum required Elementor version.
+#: includes/class-plugin.php
+msgid "Header Footer Doctor requires %1$s version %2$s or greater."
+msgstr ""
+
+#. translators: %s: Hello Elementor theme name, wrapped in <strong>.
+#: includes/class-plugin.php
+msgid "Header Footer Doctor is built for the %s theme. Activate that theme (or a child theme of it) to use the header and footer builder."
+msgstr ""
+
+#: includes/class-plugin.php
+msgid "Hello Elementor"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Header/Footer"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Template"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Header Footer Doctor"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Add New"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Add New Template"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "New Template"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Edit Template"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "View Template"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "All Templates"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Search Templates"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "No templates found."
+msgstr ""
+
+#: includes/class-templates.php
+msgid "No templates found in Trash."
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Template Type"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Display Rules"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "This template is a"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "— Select type —"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Header"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Footer"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Choose whether this template replaces the site header or the site footer."
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Display on"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "More specific rules win: specific pages beat homepage, which beats posts and pages, which beat global."
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Select pages"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Search pages…"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "No published pages yet."
+msgstr ""
+
+#: includes/class-templates.php
+msgid "No pages match your search."
+msgstr ""
+
+#: includes/class-templates.php
+msgid "selected"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Entire site (global)"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Specific pages"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Homepage only"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "All single posts"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "All pages"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Type"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Display On"
+msgstr ""
+
+#: includes/class-templates.php
+msgid "Specific pages — none selected"
+msgstr ""
+
+#. translators: %d: number of additional pages not listed.
+#: includes/class-templates.php
+msgid "(+%d more)"
+msgid_plural "(+%d more)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-mobile-menu.php
+msgid "Header Footer Doctor — Off-canvas Menu"
+msgstr ""
+
+#: includes/class-mobile-menu.php
+msgid "Mobile menu"
+msgstr ""
+
+#: includes/class-mobile-menu.php
+msgid "Close menu"
+msgstr ""
+
+#: includes/class-mobile-menu.php
+msgid "Mobile navigation"
+msgstr ""
+
+#: includes/templates/header.php
+msgid "Skip to content"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Nav Menu (Doctor)"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Menu"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "No menus found."
+msgstr ""
+
+#. translators: %s: link to the WordPress menus screen.
+#: widgets/class-menu-widget.php
+msgid "Create one on the %s screen first."
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Menus"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Select Menu"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Maximum Depth"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Layout"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Horizontal"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Vertical"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Alignment"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Left"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Center"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Right"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Stretch"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Submenu Arrows"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Show"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Hide"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Menu Items"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Normal"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Text Color"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Background Color"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Hover"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Active"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Item Padding"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Space Between Items"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Border Radius"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Dropdown"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Width"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Box Padding"
+msgstr ""
+
+#: widgets/class-menu-widget.php
+msgid "Select a menu in the widget settings."
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Mobile Hamburger (Doctor)"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Hamburger"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "No off-canvas menu assigned."
+msgstr ""
+
+#. translators: %s: link to the WordPress menu locations screen.
+#: widgets/class-hamburger-widget.php
+msgid "Assign a menu to the off-canvas location on the %s screen, otherwise this button has no panel to open."
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Style"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Lines"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Icon"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Two"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Three"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Four"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Animate To Close Icon"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Morphs the lines into a cross while the panel is open."
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Yes"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "No"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Label Text"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Optional text beside the icon. Leave empty for an icon-only button."
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Text Position"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Before Icon"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "After Icon"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Accessible Label"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Read out by screen readers. Used only when there is no label text."
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Open menu"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Visibility"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Hide the button on the breakpoints where the full menu is already visible."
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Customize The Panel"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Adds Panel, Panel Header and Panel Menu sections to the Style tab. The off-canvas panel is shared by the whole site, so turn this on for one hamburger widget only."
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Button"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Icon Size"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Padding"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Color"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Border Color"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Thickness"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Gap"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Line Radius"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Gap From Icon"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Panel"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Slide In From"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Base colour for the panel, used by the site title and the close icon."
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Overlay Color"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Panel Header"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Logo Width"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Applies to the site custom logo, when one is set."
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Site Title Typography"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Close Button"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Size"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Panel Menu"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Menu Padding"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Submenu Indent"
+msgstr ""
+
+#: widgets/class-hamburger-widget.php
+msgid "Editor only: assign a menu to the plugin off-canvas menu location under Appearance → Menus, otherwise this button has no panel to open."
+msgstr ""

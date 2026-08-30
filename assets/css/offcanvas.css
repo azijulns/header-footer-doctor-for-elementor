@@ -1,0 +1,218 @@
+/**
+ * Header Footer Doctor for Elementor — off-canvas mobile menu.
+ *
+ * Every colour and size is a custom property, so themes can restyle the panel
+ * without overriding selectors and the Mobile Hamburger widget's panel controls
+ * only ever have to set a variable.
+ *
+ * Note on specificity: Elementor's Global Theme Style writes
+ * `.elementor-kit-{id} button { ... }`, which is (0,1,1) and would otherwise
+ * beat a single class. The close button is therefore reset through a
+ * two-class selector.
+ */
+
+:root {
+	--hfdoctor-offcanvas-width: 350px;
+	/*
+	 * Opaque on purpose. This was #000000f8 (97.3% opaque), which let the page
+	 * behind the panel bleed through at ~3% — bright header content showed as
+	 * faint grey ghosts over the menu. Set the Background Color control on the
+	 * Mobile Hamburger widget if you want the panel translucent.
+	 */
+	--hfdoctor-offcanvas-bg: #000000;
+	--hfdoctor-offcanvas-color: #feffff;
+	--hfdoctor-offcanvas-accent: #e11b22;
+	--hfdoctor-offcanvas-overlay: rgba( 0, 0, 0, 0.5 );
+	--hfdoctor-offcanvas-z: 99999;
+	--hfdoctor-offcanvas-breakpoint: 1024px;
+
+	/* Slide direction: 100% enters from the right, -100% from the left. */
+	--hfdoctor-offcanvas-hidden-x: 100%;
+
+	--hfdoctor-offcanvas-padding: 0 25px 20px;
+	--hfdoctor-offcanvas-bar-padding: 20px 0;
+	--hfdoctor-offcanvas-logo-width: 185px;
+	--hfdoctor-offcanvas-close-size: 40px;
+	--hfdoctor-offcanvas-close-color: currentColor;
+	--hfdoctor-offcanvas-close-color-hover: var( --hfdoctor-offcanvas-accent );
+	--hfdoctor-offcanvas-close-bg: transparent;
+	--hfdoctor-offcanvas-close-bg-hover: transparent;
+	--hfdoctor-offcanvas-close-radius: 0;
+	--hfdoctor-offcanvas-nav-padding: 30px 10px 0;
+	--hfdoctor-offcanvas-item-gap: 20px;
+	--hfdoctor-offcanvas-link-size: 21px;
+	--hfdoctor-offcanvas-link-padding: 5px 0;
+	--hfdoctor-offcanvas-link-color: var( --hfdoctor-offcanvas-color );
+	--hfdoctor-offcanvas-link-bg: transparent;
+	--hfdoctor-offcanvas-link-hover: var( --hfdoctor-offcanvas-accent );
+	--hfdoctor-offcanvas-link-bg-hover: transparent;
+	--hfdoctor-offcanvas-link-active: var( --hfdoctor-offcanvas-accent );
+	--hfdoctor-offcanvas-align: left;
+	--hfdoctor-offcanvas-sub-indent: 16px;
+}
+
+.hfdoctor-offcanvas {
+	position: fixed;
+	top: 0;
+	right: var( --hfdoctor-offcanvas-right, 0 );
+	left: var( --hfdoctor-offcanvas-left, auto );
+	z-index: var( --hfdoctor-offcanvas-z );
+	width: var( --hfdoctor-offcanvas-width );
+	max-width: 100%;
+	height: 100%;
+	padding: var( --hfdoctor-offcanvas-padding );
+	overflow-y: auto;
+	color: var( --hfdoctor-offcanvas-color );
+	background-color: var( --hfdoctor-offcanvas-bg );
+	transform: translateX( var( --hfdoctor-offcanvas-hidden-x ) );
+	transition: transform 0.3s ease;
+}
+
+.hfdoctor-offcanvas[hidden] {
+	display: none;
+}
+
+.hfdoctor-offcanvas.is-open {
+	transform: translateX( 0 );
+}
+
+@media ( prefers-reduced-motion: reduce ) {
+
+	.hfdoctor-offcanvas {
+		transition: none;
+	}
+}
+
+.hfdoctor-offcanvas__overlay {
+	position: fixed;
+	inset: 0;
+	z-index: calc( var( --hfdoctor-offcanvas-z ) - 1 );
+	background: var( --hfdoctor-offcanvas-overlay );
+}
+
+.hfdoctor-offcanvas__overlay[hidden] {
+	display: none;
+}
+
+.hfdoctor-offcanvas__bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: var( --hfdoctor-offcanvas-bar-padding );
+}
+
+.hfdoctor-offcanvas__bar img {
+	max-width: var( --hfdoctor-offcanvas-logo-width );
+	height: auto;
+}
+
+.hfdoctor-offcanvas__title {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+/* Two classes so Elementor's global `button` theme style does not win. */
+.hfdoctor-offcanvas__close.hfdoctor-offcanvas__close {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+	width: auto;
+	min-width: 0;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	background: var( --hfdoctor-offcanvas-close-bg );
+	border: 0;
+	border-radius: var( --hfdoctor-offcanvas-close-radius );
+	box-shadow: none;
+	cursor: pointer;
+	transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.hfdoctor-offcanvas__close.hfdoctor-offcanvas__close:hover,
+.hfdoctor-offcanvas__close.hfdoctor-offcanvas__close:focus,
+.hfdoctor-offcanvas__close.hfdoctor-offcanvas__close:focus-visible {
+	color: var( --hfdoctor-offcanvas-close-color-hover );
+	background: var( --hfdoctor-offcanvas-close-bg-hover );
+}
+
+.hfdoctor-offcanvas__close svg {
+	width: var( --hfdoctor-offcanvas-close-size );
+	height: var( --hfdoctor-offcanvas-close-size );
+	color: var( --hfdoctor-offcanvas-close-color );
+}
+
+.hfdoctor-offcanvas__close:focus-visible {
+	outline: 2px solid var( --hfdoctor-offcanvas-accent );
+	outline-offset: 2px;
+}
+
+.hfdoctor-offcanvas__nav {
+	padding: var( --hfdoctor-offcanvas-nav-padding );
+}
+
+.hfdoctor-offcanvas__menu,
+.hfdoctor-offcanvas__menu ul {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+.hfdoctor-offcanvas__menu {
+	text-align: var( --hfdoctor-offcanvas-align );
+}
+
+.hfdoctor-offcanvas__menu li {
+	margin-bottom: var( --hfdoctor-offcanvas-item-gap );
+}
+
+.hfdoctor-offcanvas__menu ul {
+	margin-top: var( --hfdoctor-offcanvas-item-gap );
+	padding-left: var( --hfdoctor-offcanvas-sub-indent );
+}
+
+.hfdoctor-offcanvas__menu a {
+	display: block;
+	padding: var( --hfdoctor-offcanvas-link-padding );
+	color: var( --hfdoctor-offcanvas-link-color );
+	font-size: var( --hfdoctor-offcanvas-link-size );
+	font-weight: 500;
+	line-height: 1;
+	text-decoration: none;
+	background-color: var( --hfdoctor-offcanvas-link-bg );
+	transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.hfdoctor-offcanvas__menu a:hover,
+.hfdoctor-offcanvas__menu a:focus {
+	color: var( --hfdoctor-offcanvas-link-hover );
+	background-color: var( --hfdoctor-offcanvas-link-bg-hover );
+}
+
+.hfdoctor-offcanvas__menu .current-menu-item > a,
+.hfdoctor-offcanvas__menu .current-menu-ancestor > a {
+	color: var( --hfdoctor-offcanvas-link-active );
+}
+
+.hfdoctor-offcanvas__menu li:last-child a {
+	margin: 0;
+}
+
+body.hfdoctor-offcanvas-active {
+	overflow: hidden;
+}
+
+/* Trigger visibility helper for themes that opt in. */
+.hfdoctor-offcanvas-open {
+	display: none;
+	cursor: pointer;
+}
+
+@media ( max-width: 1023px ) {
+
+	.hfdoctor-offcanvas-open {
+		display: block;
+	}
+}

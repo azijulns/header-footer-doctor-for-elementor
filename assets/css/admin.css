@@ -1,0 +1,93 @@
+/**
+ * Header Footer Doctor for Elementor — template edit screen meta boxes.
+ */
+
+.hfdoctor-field {
+	margin-bottom: 12px;
+}
+
+.hfdoctor-field > label {
+	display: block;
+	margin-bottom: 6px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.hfdoctor-field .description {
+	margin-top: 6px;
+	color: #646970;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.hfdoctor-pagepicker {
+	margin-top: 14px;
+	padding: 12px;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.hfdoctor-pagepicker[hidden] {
+	display: none;
+}
+
+.hfdoctor-pagepicker > label {
+	display: block;
+	margin-bottom: 6px;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.hfdoctor-pagepicker__search {
+	margin-bottom: 8px;
+}
+
+.hfdoctor-pagepicker__list {
+	max-height: 220px;
+	margin: 0;
+	padding: 6px 8px;
+	overflow-y: auto;
+	list-style: none;
+	background: #fff;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+}
+
+.hfdoctor-pagepicker__item {
+	margin: 0;
+	padding: 3px 0;
+}
+
+.hfdoctor-pagepicker__item[hidden] {
+	display: none;
+}
+
+.hfdoctor-pagepicker__item label {
+	display: flex;
+	gap: 6px;
+	align-items: flex-start;
+	line-height: 1.4;
+	cursor: pointer;
+}
+
+.hfdoctor-pagepicker__item input[type="checkbox"] {
+	margin: 2px 0 0;
+	flex: 0 0 auto;
+}
+
+.hfdoctor-pagepicker__empty {
+	margin: 8px 0 0;
+	color: #646970;
+	font-size: 12px;
+	font-style: italic;
+}
+
+.hfdoctor-pagepicker__empty[hidden] {
+	display: none;
+}
+
+.hfdoctor-pagepicker__count {
+	font-weight: 600;
+	color: #2271b1;
+}
